@@ -2143,7 +2143,7 @@ interface StructureController extends OwnedStructure {
     /**
      * Current controller level, from 0 to 8.
      */
-    level: number;
+    level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
     /**
      * The current progress of upgrading the controller to the next level.
      */
