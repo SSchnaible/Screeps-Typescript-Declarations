@@ -181,6 +181,8 @@ declare const STRUCTURE_TERMINAL: "terminal";
 declare const STRUCTURE_CONTAINER: "container";
 declare const STRUCTURE_NUKER: "nuker";
 declare const STRUCTURE_PORTAL: "portal";
+declare type StructureType = "extension" | "rampart" | "road" | "spawn" | "link" | "wall" | "keeperLair" | "controller" | "storage" | "tower" | "observer" | "powerBank" | "powerSpawn" | "extractor" | "lab" | "terminal" | "container" | "nuker" | "portal";
+declare const StructureTypeEnum: ["extension", "rampart", "road", "spawn", "link", "wall", "keeperLair", "controller", "storage", "tower", "observer", "powerBank", "powerSpawn", "extractor", "lab", "terminal", "container", "nuker", "portal"];
 declare const RESOURCE_ENERGY: "energy";
 declare const RESOURCE_POWER: "power";
 declare const RESOURCE_UTRIUM: "U";
@@ -384,7 +386,7 @@ interface ConstructionSite extends RoomObject {
     /**
      * One of the following constants: STRUCTURE_EXTENSION, STRUCTURE_RAMPART, STRUCTURE_ROAD, STRUCTURE_SPAWN, STRUCTURE_WALL, STRUCTURE_LINK
      */
-    structureType: string;
+    structureType: StructureType;
     /**
      * Remove the construction site.
      * @returns Result Code: OK, ERR_NOT_OWNER
@@ -1473,7 +1475,7 @@ interface RoomPosition {
      * Create new ConstructionSite at the specified location.
      * @param structureType One of the following constants: STRUCTURE_EXTENSION, STRUCTURE_RAMPART, STRUCTURE_ROAD, STRUCTURE_SPAWN, STRUCTURE_WALL, STRUCTURE_LINK
      */
-    createConstructionSite(structureType: string): number;
+    createConstructionSite(structureType: StructureType): number;
     /**
      * Create new Flag at the specified location.
      * @param name The name of a new flag. It should be unique, i.e. the Game.flags object should not contain another flag with the same name (hash key). If not defined, a random name will be generated.
@@ -1796,7 +1798,7 @@ interface Room {
      * @param structureType One of the following constants: STRUCTURE_EXTENSION, STRUCTURE_RAMPART, STRUCTURE_ROAD, STRUCTURE_SPAWN, STRUCTURE_WALL, STRUCTURE_LINK
      * @returns Result Code: OK, ERR_INVALID_TARGET, ERR_INVALID_ARGS, ERR_RCL_NOT_ENOUGH
      */
-    createConstructionSite(x: number, y: number, structureType: string): number;
+    createConstructionSite(x: number, y: number, structureType: StructureType): number;
     /**
      * Create new ConstructionSite at the specified location.
      * @param pos Can be a RoomPosition object or any object containing RoomPosition.
@@ -1805,7 +1807,7 @@ interface Room {
      */
     createConstructionSite(pos: RoomPosition | {
         pos: RoomPosition;
-    }, structureType: string): number;
+    }, structureType: StructureType): number;
     /**
      * Create new Flag at the specified location.
      * @param x The X position.
@@ -2093,7 +2095,7 @@ interface Structure extends RoomObject {
     /**
      * One of the STRUCTURE_* constants.
      */
-    structureType: string;
+    structureType: StructureType;
     /**
      * Destroy this structure immediately.
      */

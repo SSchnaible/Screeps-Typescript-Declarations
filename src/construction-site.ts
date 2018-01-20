@@ -26,7 +26,7 @@ interface ConstructionSite extends RoomObject {
     /**
      * One of the following constants: STRUCTURE_EXTENSION, STRUCTURE_RAMPART, STRUCTURE_ROAD, STRUCTURE_SPAWN, STRUCTURE_WALL, STRUCTURE_LINK
      */
-    structureType: string;
+    structureType: StructureType;
     /**
      * Remove the construction site.
      * @returns Result Code: OK, ERR_NOT_OWNER

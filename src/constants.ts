@@ -204,6 +204,8 @@ declare const STRUCTURE_TERMINAL: "terminal";
 declare const STRUCTURE_CONTAINER: "container";
 declare const STRUCTURE_NUKER: "nuker";
 declare const STRUCTURE_PORTAL: "portal";
+type StructureType = "extension" | "rampart" | "road" | "spawn" | "link" | "wall" | "keeperLair" | "controller" | "storage" | "tower" | "observer" | "powerBank" | "powerSpawn" | "extractor" | "lab" | "terminal" | "container" | "nuker" | "portal";
+declare const StructureTypeEnum: ["extension", "rampart", "road", "spawn", "link", "wall", "keeperLair", "controller", "storage", "tower", "observer", "powerBank", "powerSpawn", "extractor", "lab", "terminal", "container", "nuker", "portal"];
 
 declare const RESOURCE_ENERGY: "energy";
 declare const RESOURCE_POWER: "power";

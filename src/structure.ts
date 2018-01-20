@@ -25,7 +25,7 @@ interface Structure extends RoomObject {
     /**
      * One of the STRUCTURE_* constants.
      */
-    structureType: string;
+    structureType: StructureType;
     /**
      * Destroy this structure immediately.
      */
