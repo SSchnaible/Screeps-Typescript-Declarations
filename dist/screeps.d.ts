@@ -144,6 +144,7 @@ declare const RANGED_ATTACK: "ranged_attack";
 declare const TOUGH: "tough";
 declare const HEAL: "heal";
 declare const CLAIM: "claim";
+declare type BodyPart = "move" | "work" | "carry" | "attack" | "ranged_attack" | "tough" | "heal" | "claim";
 declare const CONSTRUCTION_COST: {
     spawn: 15000;
     extension: 3000;
@@ -226,6 +227,7 @@ declare const RESOURCE_CATALYZED_ZYNTHIUM_ALKALIDE: "ZXHO2";
 declare const RESOURCE_CATALYZED_GHODIUM_ACID: "XGH2O";
 declare const RESOURCE_CATALYZED_GHODIUM_ALKALIDE: "XGHO2";
 declare const RESOURCES_ALL: string[];
+declare type ResourceType = "energy" | "power" | "U" | "L" | "K" | "G" | "Z" | "O" | "H" | "X" | "OH" | "ZK" | "UL" | "UH" | "UO" | "KH" | "KO" | "LH" | "LO" | "ZH" | "ZO" | "GH" | "GO" | "UH2O" | "UHO2" | "KH2O" | "KHO2" | "LH2O" | "LHO2" | "ZH2O" | "ZHO2" | "GH2O" | "GHO2" | "XUH2O" | "XUHO2" | "XKH2O" | "XKHO2" | "XLH2O" | "XLHO2" | "XZH2O" | "ZXHO2" | "XGH2O" | "XGHO2";
 declare const SUBSCRIPTION_TOKEN: string;
 declare const CONTROLLER_LEVELS: {
     [level: number]: number;
