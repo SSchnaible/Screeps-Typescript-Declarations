@@ -290,6 +290,7 @@ declare const POWER_SPAWN_POWER_CAPACITY: number;
 declare const POWER_SPAWN_ENERGY_RATIO: number;
 
 declare const EXTRACTOR_HITS: number;
+declare const EXTRACTOR_COOLDOWN: number;
 
 declare const LAB_HITS: number;
 declare const LAB_MINERAL_CAPACITY: number;
