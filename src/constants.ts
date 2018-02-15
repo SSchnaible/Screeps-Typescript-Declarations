@@ -54,6 +54,8 @@ declare const BOTTOM_LEFT: 6;
 declare const LEFT: 7;
 declare const TOP_LEFT: 8;
 
+declare const ROOM_SIZE: 50;
+
 declare const COLOR_RED: 1;
 declare const COLOR_PURPLE: 2;
 declare const COLOR_BLUE: 3;
