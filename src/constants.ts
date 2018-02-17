@@ -157,6 +157,7 @@ declare const RANGED_ATTACK_POWER: 10;
 declare const HEAL_POWER: 12;
 declare const RANGED_HEAL_POWER: 4;
 declare const DISMANTLE_COST: 0.005;
+declare const UPGRADE_CONTROLLER_RANGE: 3;
 
 declare const MOVE: "move";
 declare const WORK: "work";
