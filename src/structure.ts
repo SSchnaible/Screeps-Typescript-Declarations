@@ -84,7 +84,7 @@ interface StructureController extends OwnedStructure {
     /**
      * Current controller level, from 0 to 8.
      */
-    level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+    level: Rcl;
     /**
      * The current progress of upgrading the controller to the next level.
      */
@@ -136,6 +136,8 @@ interface StructureControllerConstructor extends _Constructor<StructureControlle
 }
 
 declare const StructureController: StructureControllerConstructor;
+declare type Rcl = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+declare type OwnedRcl = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 /**
  * Contains energy which can be spent on spawning bigger creeps. Extensions can

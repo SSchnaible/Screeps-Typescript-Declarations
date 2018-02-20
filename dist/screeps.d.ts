@@ -176,7 +176,8 @@ declare const STRUCTURE_TERMINAL: "terminal";
 declare const STRUCTURE_CONTAINER: "container";
 declare const STRUCTURE_NUKER: "nuker";
 declare const STRUCTURE_PORTAL: "portal";
-declare type StructureType = "extension" | "rampart" | "road" | "spawn" | "link" | "wall" | "keeperLair" | "controller" | "storage" | "tower" | "observer" | "powerBank" | "powerSpawn" | "extractor" | "lab" | "terminal" | "container" | "nuker" | "portal";
+declare type StructureType = "extension" | "rampart" | "road" | "spawn" | "link" | "constructedWall" | "keeperLair" | "controller" | "storage" | "tower" | "observer" | "powerBank" | "powerSpawn" | "extractor" | "lab" | "terminal" | "container" | "nuker" | "portal";
+declare type BuildableStructureType = "extension" | "rampart" | "road" | "spawn" | "link" | "constructedWall" | "storage" | "tower" | "observer" | "powerSpawn" | "extractor" | "lab" | "terminal" | "container" | "nuker";
 declare const CONSTRUCTION_COST: {
     spawn: 15000;
     extension: 3000;
@@ -2562,7 +2563,7 @@ interface StructureController extends OwnedStructure {
     /**
      * Current controller level, from 0 to 8.
      */
-    level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+    level: Rcl;
     /**
      * The current progress of upgrading the controller to the next level.
      */
@@ -2612,6 +2613,8 @@ interface StructureController extends OwnedStructure {
 interface StructureControllerConstructor extends _Constructor<StructureController>, _ConstructorById<StructureController> {
 }
 declare const StructureController: StructureControllerConstructor;
+declare type Rcl = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+declare type OwnedRcl = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 /**
  * Contains energy which can be spent on spawning bigger creeps. Extensions can
  * be placed anywhere in the room, any spawns will be able to use them regardless

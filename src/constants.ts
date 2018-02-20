@@ -196,7 +196,8 @@ declare const STRUCTURE_TERMINAL: "terminal";
 declare const STRUCTURE_CONTAINER: "container";
 declare const STRUCTURE_NUKER: "nuker";
 declare const STRUCTURE_PORTAL: "portal";
-type StructureType = "extension" | "rampart" | "road" | "spawn" | "link" | "wall" | "keeperLair" | "controller" | "storage" | "tower" | "observer" | "powerBank" | "powerSpawn" | "extractor" | "lab" | "terminal" | "container" | "nuker" | "portal";
+type StructureType = "extension" | "rampart" | "road" | "spawn" | "link" | "constructedWall" | "keeperLair" | "controller" | "storage" | "tower" | "observer" | "powerBank" | "powerSpawn" | "extractor" | "lab" | "terminal" | "container" | "nuker" | "portal";
+type BuildableStructureType = "extension" | "rampart" | "road" | "spawn" | "link" | "constructedWall" | "storage" | "tower" | "observer" | "powerSpawn" | "extractor" | "lab" | "terminal" | "container" | "nuker";
 
 declare const CONSTRUCTION_COST: {
     spawn: 15000,
