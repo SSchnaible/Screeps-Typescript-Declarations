@@ -3,7 +3,7 @@
  */
 interface Room {
     readonly prototype: Room;
-    
+
     /**
      * The Controller structure of this room, if present, otherwise undefined.
      */
@@ -149,7 +149,7 @@ interface Room {
      * @param right The right X boundary of the area.
      * @returns An object with all the objects of the given type in the specified area
      */
-    lookForAtArea(type: string, top: number, left: number, bottom: number, right: number, asArray?: boolean): LookAtResultMatrix | LookAtResultWithPos[];
+    lookForAtArea<T>(type: string, top: number, left: number, bottom: number, right: number, asArray?: boolean): LookForAtResultMatrix<T> | LookAtResultWithPos[];
 
     /**
      * Serialize a path array into a short string representation, which is suitable to store in memory.

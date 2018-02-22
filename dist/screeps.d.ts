@@ -1273,6 +1273,11 @@ interface LookAtResult {
 interface LookAtResultMatrix {
     [coord: number]: LookAtResultMatrix | LookAtResult[];
 }
+interface LookForAtResultMatrix<T> {
+    [y: number]: {
+        [x: number]: T[];
+    };
+}
 interface FindPathOpts {
     /**
      * Treat squares with creeps as walkable. Can be useful with too many moving creeps around or in some other cases. The default
@@ -2327,7 +2332,7 @@ interface Room {
      * @param right The right X boundary of the area.
      * @returns An object with all the objects of the given type in the specified area
      */
-    lookForAtArea(type: string, top: number, left: number, bottom: number, right: number, asArray?: boolean): LookAtResultMatrix | LookAtResultWithPos[];
+    lookForAtArea<T>(type: string, top: number, left: number, bottom: number, right: number, asArray?: boolean): LookForAtResultMatrix<T> | LookAtResultWithPos[];
 }
 interface RoomConstructor {
     new (id: string): Room;

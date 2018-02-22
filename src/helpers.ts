@@ -80,9 +80,14 @@ interface LookAtResult {
     resource?: Resource;
 }
 
-
 interface LookAtResultMatrix {
     [coord: number]: LookAtResultMatrix|LookAtResult[]
+}
+
+interface LookForAtResultMatrix<T> {
+    [y: number]: {
+        [x: number]: T[]
+    }
 }
 
 interface FindPathOpts {
