@@ -2960,7 +2960,7 @@ interface StructureTerminal extends OwnedStructure {
     /**
      * An object with the storage contents. Each object key is one of the RESOURCE_* constants, values are resources amounts.
      */
-    store: any;
+    store: StoreDefinition;
     /**
      * The total amount of resources the storage can contain.
      */
