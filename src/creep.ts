@@ -4,7 +4,7 @@
  */
 interface Creep extends RoomObject {
     readonly prototype: Creep;
-    
+
     /**
      * An array describing the creep’s body. Each element contains the following properties:
      * type: string
@@ -65,7 +65,7 @@ interface Creep extends RoomObject {
     spawning: boolean;
     /**
      * The text message that the creep was saying at the last tick.
-     */ 
+     */
     saying: string;
     /**
      * The remaining amount of game ticks after which the creep will die.
@@ -135,7 +135,7 @@ interface Creep extends RoomObject {
      * Move the creep one square in the specified direction. Needs the MOVE body part.
      * @param direction
      */
-    move(direction: number) : number;
+    move(direction: Direction) : number;
     /**
      * Move the creep using the specified predefined path. Needs the MOVE body part.
      * @param path A path value as returned from Room.findPath or RoomPosition.findPathTo methods. Both array form and serialized string form are accepted.
@@ -196,7 +196,7 @@ interface Creep extends RoomObject {
      */
     say(message: string, toPublic?: boolean): number;
     /**
-     * Sign a controller with a random text visible to all players. This text will appear in the room UI, in the world map, and can be accessed via the API. 
+     * Sign a controller with a random text visible to all players. This text will appear in the room UI, in the world map, and can be accessed via the API.
      * You can sign unowned and hostile controllers. The target has to be at adjacent square to the creep. Pass an empty string to remove the sign.
      * @param target The target controller object to be signed.
      * @param text The sign text. The maximum text length is 100 characters.

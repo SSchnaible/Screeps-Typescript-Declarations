@@ -193,7 +193,7 @@ interface PathStep {
     dx: number;
     y: number;
     dy: number;
-    direction: number;
+    direction: Direction;
 }
 
 /**

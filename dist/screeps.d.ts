@@ -969,7 +969,7 @@ interface Creep extends RoomObject {
      * Move the creep one square in the specified direction. Needs the MOVE body part.
      * @param direction
      */
-    move(direction: number): number;
+    move(direction: Direction): number;
     /**
      * Move the creep using the specified predefined path. Needs the MOVE body part.
      * @param path A path value as returned from Room.findPath or RoomPosition.findPathTo methods. Both array form and serialized string form are accepted.
@@ -1366,7 +1366,7 @@ interface PathStep {
     dx: number;
     y: number;
     dy: number;
-    direction: number;
+    direction: Direction;
 }
 /**
  * An object with survival game info
