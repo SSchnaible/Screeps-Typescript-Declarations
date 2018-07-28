@@ -1248,7 +1248,7 @@ interface LookAtResultWithPos {
     type: string;
     constructionSite?: ConstructionSite;
     creep?: Creep;
-    terrain?: string;
+    terrain?: TerrainType;
     structure?: Structure;
     flag?: Flag;
     energy?: Resource;
@@ -1266,7 +1266,7 @@ interface LookAtResult {
     flag?: Flag;
     source?: Source;
     structure?: Structure;
-    terrain?: string;
+    terrain?: TerrainType;
     mineral?: Mineral;
     resource?: Resource;
 }
@@ -1392,6 +1392,7 @@ interface _ConstructorById<T> extends _Constructor<T> {
     new (id: string): T;
     (id: string): T;
 }
+declare type TerrainType = "plain" | "swamp" | "wall";
 /**
  * The options that can be accepted by `findRoute()` and friends.
  */
@@ -1452,12 +1453,12 @@ interface GameMap {
      * @param y Y position in the room.
      * @param roomName The room name.
      */
-    getTerrainAt(x: number, y: number, roomName: string): string;
+    getTerrainAt(x: number, y: number, roomName: string): TerrainType;
     /**
      * Get terrain type at the specified room position. This method works for any room in the world even if you have no access to it.
      * @param pos The position object.
      */
-    getTerrainAt(pos: RoomPosition): string;
+    getTerrainAt(pos: RoomPosition): TerrainType;
     /**
      * Check if the room is available to move into.
      * @param roomName The room name.
