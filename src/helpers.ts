@@ -15,6 +15,12 @@ interface CPU {
   getUsed(): number;
 }
 
+interface Shard {
+  name: string; // The name of the shard.
+  type: string; // Currently always equals to "normal".
+  ptr?: boolean; // Whether this shard belongs to the PTR.
+}
+
 /**
  * An array describing the creep’s body. Each element contains the following properties:
  */

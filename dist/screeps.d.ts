@@ -1159,6 +1159,10 @@ interface Game {
         [roomName: string]: Room;
     };
     /**
+     * An object describing the world shard where your script is currently being executed in.
+     */
+    shard: Shard;
+    /**
      * A hash containing all your spawns with spawn names as hash keys.
      */
     spawns: {
@@ -1206,6 +1210,11 @@ interface CPU {
      * Get amount of CPU time used from the beginning of the current game tick. Always returns 0 in the Simulation mode.
      */
     getUsed(): number;
+}
+interface Shard {
+    name: string;
+    type: string;
+    ptr?: boolean;
 }
 /**
  * An array describing the creep’s body. Each element contains the following properties:
