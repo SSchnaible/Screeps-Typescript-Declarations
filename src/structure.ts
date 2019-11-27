@@ -112,7 +112,7 @@ interface StructureController extends OwnedStructure {
     /**
      * An object with the controller sign info if present
      */
-    sign: SignDefinition;
+    sign: SignDefinition | undefined;
     /**
      * The amount of game ticks when this controller will lose one level. This timer can be reset by using Creep.upgradeController.
      */
