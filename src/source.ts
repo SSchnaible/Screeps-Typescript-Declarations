@@ -1,36 +1,29 @@
-// Updated 2016-02-05
+import { _ConstructorById, ObjectId } from "./helpers";
+import { RoomObject } from "./room-object";
+
 /**
  * An energy source object. Can be harvested by creeps with a WORK body part.
+ * 
+ * Energy amount
+ *  - 4000 in center rooms
+ *  - 3000 in an owned or reserved room
+ *  - 1500 in an unreserved room
+ * 
+ * Energy regeneration
+ *  - Every 300 game ticks
  */
-interface Source extends RoomObject {
-    /**
-     * The prototype is stored in the Source.prototype global object. You can use it to extend game objects behaviour globally:
-     */
-    readonly prototype: Source;
+export declare const Source: _ConstructorById<Source>;
+export interface Source extends RoomObject, ObjectId {
     /**
      * The remaining amount of energy.
      */
     energy: number;
     /**
-     * The total amount of energy in the source. Equals to 3000 in most cases.
+     * The total amount of energy in the source.
      */
     energyCapacity: number;
-    /**
-     * A unique object identifier. You can use Game.getObjectById method to retrieve an object instance by its id.
-     */
-    id: string;
-    /**
-     * If you can get an instance of Source, you can see it.
-     * If you can see a Source, you can see the room it's in.
-     */
-    room: Room;
     /**
      * The remaining time after which the source will be refilled.
      */
     ticksToRegeneration: number;
 }
-
-interface SourceConstructor extends _Constructor<Source>, _ConstructorById<Source> {
-}
-
-declare const Source: SourceConstructor;

@@ -1,13 +1,11 @@
+import { RoomObject } from "./room-object";
+import { ObjectId, _ConstructorById } from "./helpers";
+
 /**
  * A nuke landing position. This object cannot be removed or modified. You can find incoming nukes in the room using the FIND_NUKES constant.
  */
-interface Nuke extends RoomObject {
-    readonly prototype: Nuke;
-    
-    /**
-     * A unique object identifier. You can use Game.getObjectById method to retrieve an object instance by its id.
-     */
-    id: string;
+export declare const Nuke: _ConstructorById<Nuke>;
+export interface Nuke extends RoomObject, ObjectId {
     /**
      * The name of the room where this nuke has been launched from.
      */
@@ -17,9 +15,3 @@ interface Nuke extends RoomObject {
      */
     timeToLand: number;
 }
-
-interface NukeConstructor {
-    new (id: string): Nuke;
-}
-
-declare const Nuke: NukeConstructor;

@@ -1,26 +1,18 @@
+import { RoomObject } from "./room-object";
+import { ObjectId, _ConstructorById } from "./helpers";
+import { ResourceType } from "./constants-types";
+
 /**
  * A dropped piece of resource. It will decay after a while if not picked up. Dropped resource pile decays for ceil(amount/1000) units per tick.
  */
-
-interface Resource extends RoomObject {
-    readonly prototype: Resource;
-    
+export declare const Resource: _ConstructorById<Resource>;
+export interface Resource extends RoomObject, ObjectId {
     /**
      * The amount of resource units containing.
      */
     amount: number;
     /**
-     * A unique object identifier. You can use `Game.getObjectById` method to retrieve an object instance by its `id`.
-     */
-    id: string;
-    /**
      * One of the `RESOURCE_*` constants.
      */
-    resourceType: string;
+    resourceType: ResourceType;
 }
-
-interface ResourceConstructor {
-    new (id: string): Resource;
-}
-
-declare const Resource: ResourceConstructor;

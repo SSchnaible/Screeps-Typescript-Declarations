@@ -1,19 +1,23 @@
 /**
- * RawMemory object allows to implement your own memory stringifier instead of built-in serializer based on JSON.stringify.
+ * RawMemory object allows to implement your own memory stringifier instead of built-in serializer based on JSON.stringify. It also allows to request up to 10 MB of additional memory using asynchronous memory segments feature.
+ * You can also access memory segments of other players using methods below.
  */
-interface RawMemory {
-
+export declare const RawMemory: RawMemory;
+export interface RawMemory {
     /**
-     * An object with asynchronous memory segments available on this tick. Each object key is the segment ID with data in string values. 
-     * Use RawMemory.setActiveSegments to fetch segments on the next tick. Segments data is saved automatically in the end of the tick. 
+     * An object with asynchronous memory segments available on this tick. Each object key is the segment ID with data in string values. Use setActiveSegments to fetch segments on the next tick. Segments data is saved automatically in the end of the tick. The maximum size per segment is 100 KB.
      */
-    segments: string[];
+    segments: { [segmentId: string]: string };
     /**
-     * An object with a memory segment of another player available on this tick. 
-     * Use setActiveForeignSegment to fetch segments on the next tick. The object consists of the following properties:
-     * @type {ForeignMemorySegment}
+     * An object with a memory segment of another player available on this tick. Use setActiveForeignSegment to fetch segments on the next tick.
      */
-    foreignSegment: ForeignMemorySegment;
+    foreignSegment: ForeignMemorySegment | undefined;
+    /**
+     * A string with a shared memory segment available on every world shard. Maximum string length is 100 KB.
+     * Warning: this segment is not safe for concurrent usage! All shards have shared access to the same instance of data. When the segment contents is changed by two shards simultaneously, you may lose some data, since the segment string value is written all at once atomically. You must implement your own system to determine when each shard is allowed to rewrite the inter-shard memory, e.g. based on mutual exclusions.
+     * @deprecated This property is deprecated and will be removed soon. Please use InterShardMemory instead.
+     */
+    interShardSegment: string;
     /**
      * Get a raw string representation of the Memory object.
      */
@@ -51,7 +55,16 @@ interface RawMemory {
 }
 
 interface ForeignMemorySegment {
-    username: string,
-    id: number,
-    data: string
+    /**
+     * Another player's name.
+     */
+    username: string;
+    /**
+     * The ID of the requested memory segment.
+     */
+    id: number;
+    /**
+     * The segment contents.
+     */
+    data: string;
 }

@@ -1,10 +1,19 @@
+import { RoomPosition } from "./room-position";
+import { Effect } from "./effect";
+import { Room } from "./room";
+
 /**
  * Any object with a position in a room. Almost all game objects prototypes
  * are derived from RoomObject.
  */
-
-interface RoomObject {
-    readonly prototype: RoomObject;
+export declare const RoomObject: {
+    new(x: number, y: number, roomName: string): RoomObject;
+};
+export interface RoomObject {
+    /**
+     * Applied effects
+     */
+    effects: Effect[];
     /**
      * An object representing the position of this object in the room.
      */
@@ -16,10 +25,3 @@ interface RoomObject {
      */
     room: Room | undefined;
 }
-
-interface RoomObjectConstructor extends _Constructor<RoomObject> {
-    new (x: number, y: number, roomName: string): RoomObject;
-    (x: number, y: number, roomName: string): RoomObject;
-}
-
-declare const RoomObject: RoomObjectConstructor;

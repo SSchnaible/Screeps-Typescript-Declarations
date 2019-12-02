@@ -5,7 +5,7 @@
   "repository": "screepers/screeps-typescript-declarations",
   "typings": "./dist/screeps.d.ts",
   "scripts": {
-    "compile": "node_modules/.bin/tsc"
+    "compile": "dts-bundle-generator -o dist/index.d.ts src/screeps.ts"
   },
   "keywords": [
     "Screeps",
@@ -16,6 +16,11 @@
   "author": "Marko Sulamagi <marko.sulamagi@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "dts-bundle": "^0.7.3",
+    "npm-dts": "^1.1.10",
     "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "dts-bundle-generator": "^3.3.1"
   }
 }

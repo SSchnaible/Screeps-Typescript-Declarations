@@ -1,102 +1,184 @@
-interface GlobalControlLevel {
-  level: number;
-  progress: number;
-  progressTotal: number;
+import { OK, ERR_BUSY, ERR_INVALID_ARGS, ResourceType, BodyPart, Direction, LOOK_CREEPS, LOOK_ENERGY, LOOK_RESOURCES, LOOK_SOURCES, LOOK_MINERALS, LOOK_DEPOSITS, LOOK_STRUCTURES, LOOK_FLAGS, LOOK_CONSTRUCTION_SITES, LOOK_NUKES, LOOK_TERRAIN, LOOK_TOMBSTONES, LOOK_POWER_CREEPS, LOOK_RUINS, TerrainType } from "./constants-types";
+import { RoomPosition } from "./room-position";
+import { CostMatrix } from "./path-finder";
+import { Creep, PowerCreep } from "./creep";
+import { Resource } from "./resource";
+import { Mineral } from "./mineral";
+import { Deposit } from "./deposit";
+import { Structure } from "./structure";
+import { Flag } from "./flag";
+import { ConstructionSite } from "./construction-site";
+import { Nuke } from "./nuke";
+import { Source } from "./source";
+import { Tombstone } from "./tombstone";
+import { Ruin } from "./ruin";
+
+export type _ConstructorById<T> = {
+  new(id: string): T;
 }
 
-interface CPU {
-  limit: number;
-  tickLimit: number;
-  bucket: number;
-
+export interface ObjectId {
   /**
-   * Get amount of CPU time used from the beginning of the current game tick. Always returns 0 in the Simulation mode.
+   * A unique object identifier. You can use `Game.getObjectById` method to retrieve an object instance by its `id`.
    */
-  getUsed(): number;
+  id: string;
 }
 
-interface Shard {
-  name: string; // The name of the shard.
-  type: string; // Currently always equals to "normal".
-  ptr?: boolean; // Whether this shard belongs to the PTR.
+export interface OwnedObject {
+  /**
+   * Whether this is your own object. Walls and roads don't have this property as they are considered neutral structures.
+   */
+  my: boolean;
+  /**
+   * An object with the object’s owner info (if present) containing the following properties: username
+   */
+  owner: Owner;
 }
 
-/**
- * An array describing the creep’s body. Each element contains the following properties:
- */
-interface BodyPartDefinition {
-  /**
-   * If the body part is boosted, this property specifies the mineral type which is used for boosting. One of the RESOURCE_* constants.
-   */
-  boost: string;
-  /**
-   * One of the body part types constants.
-   */
-  type: string;
-  /**
-   * The remaining amount of hit points of this body part.
-   */
-  hits: number;
-}
-interface Owner {
+export interface Owner {
   username: string;
 }
-interface ReservationDefinition {
-  username: string;
-  ticksToEnd: number;
-}
-interface SignDefinition {
-  username: string;
-  text: string;
-  time: number;
-  datetime: Date;
-}
-interface StoreDefinition {
-  [resource: string]: number | undefined;
-  energy?: number;
-  power?: number;
-}
 
-interface LookAtResultWithPos {
-  x: number;
-  y: number;
-  type: string;
-  constructionSite?: ConstructionSite;
-  creep?: Creep;
-  terrain?: TerrainType;
-  structure?: Structure;
-  flag?: Flag;
-  energy?: Resource;
-  exit?: any;
-  source?: Source;
-  mineral?: Mineral;
-  resource?: Resource;
-}
-interface LookAtResult {
-  type: string;
-  constructionSite?: ConstructionSite;
-  creep?: Creep;
-  energy?: Resource;
-  exit?: any;
-  flag?: Flag;
-  source?: Source;
-  structure?: Structure;
-  terrain?: TerrainType;
-  mineral?: Mineral;
-  resource?: Resource;
-}
-
-interface LookAtResultMatrix {
-  [coord: number]: LookAtResultMatrix | LookAtResult[];
-}
-
-interface LookForAtResultMatrix<T> {
+export type PosMatrix<T> = {
   [y: number]: {
     [x: number]: T[];
   };
 }
 
-interface FindPathOpts {
+export type WithPos<T> = {
+  x: number;
+  y: number;
+} & T;
+
+export type LookResult =
+  LookCreepResult |
+  LookEnergyResult |
+  LookResourceResult |
+  LookSourceResult |
+  LookMineralResult |
+  LookDepositResult |
+  LookStructureResult |
+  LookFlagResult |
+  LookConstructionSiteResult |
+  LookNukeResult |
+  LookTerrainResult |
+  LookTombstoneResult |
+  LookPowerCreepResult |
+  LookRuinResult;
+
+export type LookCreepResult = LookForCreepResult & {
+  type: LOOK_CREEPS;
+};
+
+export type LookEnergyResult = LookForEnergyResult & {
+  type: LOOK_ENERGY;
+};
+
+export type LookResourceResult = LookForResourceResult & {
+  type: LOOK_RESOURCES;
+};
+
+export type LookSourceResult = LookForSourceResult & {
+  type: LOOK_SOURCES;
+};
+
+export type LookMineralResult = LookForMineralResult & {
+  type: LOOK_MINERALS;
+};
+
+export type LookDepositResult = LookForDepositResult & {
+  type: LOOK_DEPOSITS;
+};
+
+export type LookStructureResult = LookForStructureResult & {
+  type: LOOK_STRUCTURES;
+};
+
+export type LookFlagResult = LookForFlagResult & {
+  type: LOOK_FLAGS;
+};
+
+export type LookConstructionSiteResult = LookForConstructionSiteResult & {
+  type: LOOK_CONSTRUCTION_SITES;
+};
+
+export type LookNukeResult = LookForNukeResult & {
+  type: LOOK_NUKES;
+};
+
+export type LookTerrainResult = LookForTerrainResult & {
+  type: LOOK_TERRAIN;
+};
+
+export type LookTombstoneResult = LookForTombstoneResult & {
+  type: LOOK_TOMBSTONES;
+};
+
+export type LookPowerCreepResult = LookForPowerCreepResult & {
+  type: LOOK_POWER_CREEPS;
+};
+
+export type LookRuinResult = LookForRuinResult & {
+  type: LOOK_RUINS;
+};
+
+export type LookForCreepResult = {
+  creep: Creep;
+};
+
+export type LookForEnergyResult = {
+  energy: Resource;
+};
+
+export type LookForResourceResult = {
+  resource: Resource;
+};
+
+export type LookForSourceResult = {
+  source: Source;
+};
+
+export type LookForMineralResult = {
+  mineral: Mineral;
+};
+
+export type LookForDepositResult = {
+  deposit: Deposit;
+};
+
+export type LookForStructureResult = {
+  structure: Structure;
+};
+
+export type LookForFlagResult = {
+  flag: Flag;
+};
+
+export type LookForConstructionSiteResult = {
+  constructionSite: ConstructionSite;
+};
+
+export type LookForNukeResult = {
+  nuke: Nuke;
+};
+
+export type LookForTerrainResult = {
+  terrain: TerrainType;
+};
+
+export type LookForTombstoneResult = {
+  tembstone: Tombstone;
+};
+
+export type LookForPowerCreepResult = {
+  powerCreep: PowerCreep;
+};
+
+export type LookForRuinResult = {
+  ruin: Ruin;
+};
+
+export interface FindPathOpts {
   /**
    * Treat squares with creeps as walkable. Can be useful with too many moving creeps around or in some other cases. The default
    * value is false.
@@ -167,34 +249,7 @@ interface FindPathOpts {
   range?: number;
 }
 
-interface MoveToOpts extends FindPathOpts {
-  /**
-   * This option enables reusing the path found along multiple game ticks. It allows to save CPU time, but can result in a slightly
-   * slower creep reaction behavior. The path is stored into the creep's memory to the _move property. The reusePath value defines
-   * the amount of ticks which the path should be reused for. The default value is 5. Increase the amount to save more CPU, decrease
-   * to make the movement more consistent. Set to 0 if you want to disable path reusing.
-   */
-  reusePath?: number;
-
-  /**
-   * If reusePath is enabled and this option is set to true, the path will be stored in memory in the short serialized form using
-   * Room.serializePath. The default value is true.
-   */
-  serializeMemory?: boolean;
-
-  /**
-   * If this option is set to true, moveTo method will return ERR_NOT_FOUND if there is no memorized path to reuse. This can
-   * significantly save CPU time in some cases. The default value is false.
-   */
-  noPathFinding?: boolean;
-
-  /**
-   * Draw a line along the creep’s path using RoomVisual.poly. You can provide either an empty object or custom style parameters.
-   */
-  visualizePathStyle?: PolyStyle;
-}
-
-interface PathStep {
+export interface PathStep {
   x: number;
   dx: number;
   y: number;
@@ -202,29 +257,4 @@ interface PathStep {
   direction: Direction;
 }
 
-/**
- * An object with survival game info
- */
-interface SurvivalGameInfo {
-  /**
-   * Current score.
-   */
-  score: number;
-  /**
-   * Time to the next wave of invaders.
-   */
-  timeToWave: number;
-  /**
-   * The number of the next wave.
-   */
-  wave: number;
-}
-
-interface _Constructor<T> {
-  readonly prototype: T;
-}
-
-interface _ConstructorById<T> extends _Constructor<T> {
-  new (id: string): T;
-  (id: string): T;
-}
+export type Filter<T> = Partial<T> | ((aobj: T) => boolean) | keyof T;
