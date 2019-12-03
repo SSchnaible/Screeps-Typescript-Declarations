@@ -3,9 +3,9 @@
   "version": "4.3.1",
   "description": "Typescript declarations for Screeps API. To enable autocomplete and help with compilation",
   "repository": "screepers/screeps-typescript-declarations",
-  "typings": "./dist/screeps.d.ts",
+  "typings": "src.d.ts",
   "scripts": {
-    "compile": "dts-bundle-generator -o dist/index.d.ts src/screeps.ts"
+    "compile": "tsc"
   },
   "keywords": [
     "Screeps",

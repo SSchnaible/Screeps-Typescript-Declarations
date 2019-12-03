@@ -4,11 +4,13 @@
     "target": "es6",
     "sourceMap": false,
     "declaration": true,
+    "emitDeclarationOnly": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
+    "outFile": "dist/screeps.d.ts",
     "newLine": "LF"
   },
   "files": [
-    "./src/index.ts"
+    "src/index.d.ts"
   ]
 }
