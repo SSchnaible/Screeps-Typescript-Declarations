@@ -578,6 +578,7 @@ interface ConstructionSite extends RoomObject, OwnedObject, ObjectId {
 /////////////////////////
 
 interface CreepCommon extends RoomObject, OwnedObject, ObjectId {
+    room: Room;
     /**
      * An alias for Creep.store.
      * @deprecated This property is deprecated and will be removed soon.
@@ -955,6 +956,7 @@ interface Power {
  */
 declare const Deposit: _ConstructorById<Deposit>;
 interface Deposit extends RoomObject, ObjectId {
+    room: Room;
     /**
      * The amount of game ticks until the next harvest action is possible.
      */
@@ -1782,7 +1784,8 @@ interface Memory {
  *  - DENSITY_ULTRA: 100% chance
  */
 declare const Mineral: _ConstructorById<Mineral>;
-interface Mineral extends RoomObject {
+interface Mineral extends RoomObject, ObjectId {
+    room: Room;
     /**
      * The prototype is stored in the Mineral.prototype global object. You can use it to extend game objects behaviour globally.
      */
@@ -1814,6 +1817,7 @@ interface Mineral extends RoomObject {
  */
 declare const Nuke: _ConstructorById<Nuke>;
 interface Nuke extends RoomObject, ObjectId {
+    room: Room;
     /**
      * The name of the room where this nuke has been launched from.
      */
@@ -2043,6 +2047,7 @@ interface ForeignMemorySegment {
  */
 declare const Resource: _ConstructorById<Resource>;
 interface Resource extends RoomObject, ObjectId {
+    room: Room;
     /**
      * The amount of resource units containing.
      */
@@ -2545,7 +2550,7 @@ interface Room {
     find(type: FIND_CREEPS | FIND_MY_CREEPS | FIND_HOSTILE_CREEPS, opts?: { filter: Filter<Creep> }): Creep[];
     find(type: FIND_SOURCES_ACTIVE | FIND_SOURCES, opts?: { filter: Filter<Source> }): Source[];
     find(type: FIND_DROPPED_RESOURCES, opts?: { filter: Filter<Resource> }): Resource[];
-    find(type: FIND_STRUCTURES | FIND_MY_STRUCTURES | FIND_HOSTILE_STRUCTURES, opts?: { filter: Filter<Structure> }): Structure[];
+    find<T extends Structure>(type: FIND_STRUCTURES | FIND_MY_STRUCTURES | FIND_HOSTILE_STRUCTURES, opts?: { filter: Filter<T> }): T[];
     find(type: FIND_FLAGS, opts?: { filter: Filter<Flag> }): Flag[];
     find(type: FIND_MY_SPAWNS | FIND_HOSTILE_SPAWNS, opts?: { filter: Filter<StructureSpawn> }): StructureSpawn[];
     find(type: FIND_CONSTRUCTION_SITES | FIND_MY_CONSTRUCTION_SITES | FIND_HOSTILE_CONSTRUCTION_SITES, opts?: { filter: Filter<ConstructionSite> }): ConstructionSite[];
@@ -2662,7 +2667,7 @@ interface Room {
     lookForAtArea(type: LOOK_FLAGS, top: number, left: number, bottom: number, right: number, asArray?: false): PosMatrix<Flag | undefined>;
     lookForAtArea(type: LOOK_CONSTRUCTION_SITES, top: number, left: number, bottom: number, right: number, asArray?: false): PosMatrix<ConstructionSite | undefined>;
     lookForAtArea(type: LOOK_NUKES, top: number, left: number, bottom: number, right: number, asArray?: false): PosMatrix<Nuke | undefined>;
-    lookForAtArea(type: LOOK_TERRAIN, top: number, left: number, bottom: number, right: number, asArray?: false): PosMatrix<TerrainType | undefined>;
+    lookForAtArea(type: LOOK_TERRAIN, top: number, left: number, bottom: number, right: number, asArray?: false): PosMatrix<TerrainType>;
     lookForAtArea(type: LOOK_TOMBSTONES, top: number, left: number, bottom: number, right: number, asArray?: false): PosMatrix<Tombstone | undefined>;
     lookForAtArea(type: LOOK_POWER_CREEPS, top: number, left: number, bottom: number, right: number, asArray?: false): PosMatrix<PowerCreep | undefined>;
     lookForAtArea(type: LOOK_RUINS, top: number, left: number, bottom: number, right: number, asArray?: false): PosMatrix<Ruin | undefined>;
@@ -2800,6 +2805,7 @@ interface TerrainConstructor {
  */
 declare const Ruin: _ConstructorById<Ruin>;
 interface Ruin extends RoomObject, ObjectId {
+    room: Room;
     /**
      * The time when the structure has been destroyed.
      */
@@ -2835,6 +2841,7 @@ interface Ruin extends RoomObject, ObjectId {
  */
 declare const Source: _ConstructorById<Source>;
 interface Source extends RoomObject, ObjectId {
+    room: Room;
     /**
      * The remaining amount of energy.
      */
@@ -2896,6 +2903,7 @@ type Store = {
  */
 declare const Structure: _ConstructorById<Structure>;
 interface Structure extends RoomObject, ObjectId {
+    room: Room;
     /**
      * The current amount of hit points of the structure.
      */
@@ -3513,7 +3521,7 @@ interface SpawnOpts {
     /**
      * Set desired directions where the creep should move when spawned.
      */
-    directions: Direction[];
+    directions?: Direction[];
 }
 
 /**
@@ -3614,6 +3622,7 @@ interface StructureWall extends Structure {
  */
 declare const Tombstone: _ConstructorById<Tombstone>;
 interface Tombstone extends RoomObject, ObjectId {
+    room: Room;
     /**
      * An object containing the deceased creep or power creep.
      */
