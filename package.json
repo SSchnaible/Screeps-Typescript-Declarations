@@ -15,12 +15,6 @@
   ],
   "author": "Marko Sulamagi <marko.sulamagi@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
-    "dts-bundle": "^0.7.3",
-    "npm-dts": "^1.1.10",
-    "typescript": "^2.9.2"
-  },
-  "dependencies": {
-    "dts-bundle-generator": "^3.3.1"
-  }
+  "devDependencies": {},
+  "dependencies": {}
 }
