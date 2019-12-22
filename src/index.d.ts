@@ -65,30 +65,30 @@ declare const COLOR_ORANGE: 7;
 declare const COLOR_BROWN: 8;
 declare const COLOR_GREY: 9;
 declare const COLOR_WHITE: 10;
-declare const LOOK_CREEPS: "creep";
-declare const LOOK_ENERGY: "energy";
-declare const LOOK_RESOURCES: "resource";
-declare const LOOK_SOURCES: "source";
-declare const LOOK_MINERALS: "mineral";
-declare const LOOK_DEPOSITS: "deposit";
-declare const LOOK_STRUCTURES: "structure";
-declare const LOOK_FLAGS: "flag";
-declare const LOOK_CONSTRUCTION_SITES: "constructionSite";
-declare const LOOK_NUKES: "nuke";
-declare const LOOK_TERRAIN: "terrain";
-declare const LOOK_TOMBSTONES: "tombstone";
-declare const LOOK_POWER_CREEPS: "powerCreep";
-declare const LOOK_RUINS: "ruin";
-declare const OBSTACLE_OBJECT_TYPES: ["spawn", "creep", "powerCreep", "source", "mineral", "deposit", "controller", "constructedWall", "extension", "link", "storage", "tower", "observer", "powerSpawn", "powerBank", "lab", "terminal", "nuker", "factory", "invaderCore"];
-declare const MOVE: "move";
-declare const WORK: "work";
-declare const CARRY: "carry";
-declare const ATTACK: "attack";
-declare const RANGED_ATTACK: "ranged_attack";
-declare const TOUGH: "tough";
-declare const HEAL: "heal";
-declare const CLAIM: "claim";
-declare const BODYPART_COST: { "move": 50, "work": 100, "attack": 80, "carry": 50, "heal": 250, "ranged_attack": 150, "tough": 10, "claim": 600 };
+declare const LOOK_CREEPS: 'creep';
+declare const LOOK_ENERGY: 'energy';
+declare const LOOK_RESOURCES: 'resource';
+declare const LOOK_SOURCES: 'source';
+declare const LOOK_MINERALS: 'mineral';
+declare const LOOK_DEPOSITS: 'deposit';
+declare const LOOK_STRUCTURES: 'structure';
+declare const LOOK_FLAGS: 'flag';
+declare const LOOK_CONSTRUCTION_SITES: 'constructionSite';
+declare const LOOK_NUKES: 'nuke';
+declare const LOOK_TERRAIN: 'terrain';
+declare const LOOK_TOMBSTONES: 'tombstone';
+declare const LOOK_POWER_CREEPS: 'powerCreep';
+declare const LOOK_RUINS: 'ruin';
+declare const OBSTACLE_OBJECT_TYPES: ['spawn', 'creep', 'powerCreep', 'source', 'mineral', 'deposit', 'controller', 'constructedWall', 'extension', 'link', 'storage', 'tower', 'observer', 'powerSpawn', 'powerBank', 'lab', 'terminal', 'nuker', 'factory', 'invaderCore'];
+declare const MOVE: 'move';
+declare const WORK: 'work';
+declare const CARRY: 'carry';
+declare const ATTACK: 'attack';
+declare const RANGED_ATTACK: 'ranged_attack';
+declare const TOUGH: 'tough';
+declare const HEAL: 'heal';
+declare const CLAIM: 'claim';
+declare const BODYPART_COST: { 'move': 50, 'work': 100, 'attack': 80, 'carry': 50, 'heal': 250, 'ranged_attack': 150, 'tough': 10, 'claim': 600 };
 declare const WORLD_WIDTH: 202;
 declare const WORLD_HEIGHT: 202;
 declare const CREEP_LIFE_TIME: 1500;
@@ -112,7 +112,7 @@ declare const DISMANTLE_COST: 0.005;
 declare const RAMPART_DECAY_AMOUNT: 300;
 declare const RAMPART_DECAY_TIME: 100;
 declare const RAMPART_HITS: 1;
-declare const RAMPART_HITS_MAX: { "2": 300000, "3": 1000000, "4": 3000000, "5": 10000000, "6": 30000000, "7": 100000000, "8": 300000000 };
+declare const RAMPART_HITS_MAX: { '2': 300000, '3': 1000000, '4': 3000000, '5': 10000000, '6': 30000000, '7': 100000000, '8': 300000000 };
 declare const ENERGY_REGEN_TIME: 300;
 declare const ENERGY_DECAY: 1000;
 declare const SPAWN_HITS: 5000;
@@ -126,7 +126,7 @@ declare const SOURCE_ENERGY_KEEPER_CAPACITY: 4000;
 declare const WALL_HITS: 1;
 declare const WALL_HITS_MAX: 300000000;
 declare const EXTENSION_HITS: 1000;
-declare const EXTENSION_ENERGY_CAPACITY: { "0": 50, "1": 50, "2": 50, "3": 50, "4": 50, "5": 50, "6": 50, "7": 100, "8": 200 };
+declare const EXTENSION_ENERGY_CAPACITY: { '0': 50, '1': 50, '2': 50, '3': 50, '4': 50, '5': 50, '6': 50, '7': 100, '8': 200 };
 declare const ROAD_HITS: 5000;
 declare const ROAD_WEAROUT: 1;
 declare const ROAD_WEAROUT_POWER_CREEP: 100;
@@ -139,33 +139,33 @@ declare const LINK_COOLDOWN: 1;
 declare const LINK_LOSS_RATIO: 0.03;
 declare const STORAGE_CAPACITY: 1000000;
 declare const STORAGE_HITS: 10000;
-declare const STRUCTURE_SPAWN: "spawn";
-declare const STRUCTURE_EXTENSION: "extension";
-declare const STRUCTURE_ROAD: "road";
-declare const STRUCTURE_WALL: "constructedWall";
-declare const STRUCTURE_RAMPART: "rampart";
-declare const STRUCTURE_KEEPER_LAIR: "keeperLair";
-declare const STRUCTURE_PORTAL: "portal";
-declare const STRUCTURE_CONTROLLER: "controller";
-declare const STRUCTURE_LINK: "link";
-declare const STRUCTURE_STORAGE: "storage";
-declare const STRUCTURE_TOWER: "tower";
-declare const STRUCTURE_OBSERVER: "observer";
-declare const STRUCTURE_POWER_BANK: "powerBank";
-declare const STRUCTURE_POWER_SPAWN: "powerSpawn";
-declare const STRUCTURE_EXTRACTOR: "extractor";
-declare const STRUCTURE_LAB: "lab";
-declare const STRUCTURE_TERMINAL: "terminal";
-declare const STRUCTURE_CONTAINER: "container";
-declare const STRUCTURE_NUKER: "nuker";
-declare const STRUCTURE_FACTORY: "factory";
-declare const STRUCTURE_INVADER_CORE: "invaderCore";
-declare const CONSTRUCTION_COST: { "spawn": 15000, "extension": 3000, "road": 300, "constructedWall": 1, "rampart": 1, "link": 5000, "storage": 30000, "tower": 5000, "observer": 8000, "powerSpawn": 100000, "extractor": 5000, "lab": 50000, "terminal": 100000, "container": 5000, "nuker": 100000, "factory": 100000 };
+declare const STRUCTURE_SPAWN: 'spawn';
+declare const STRUCTURE_EXTENSION: 'extension';
+declare const STRUCTURE_ROAD: 'road';
+declare const STRUCTURE_WALL: 'constructedWall';
+declare const STRUCTURE_RAMPART: 'rampart';
+declare const STRUCTURE_KEEPER_LAIR: 'keeperLair';
+declare const STRUCTURE_PORTAL: 'portal';
+declare const STRUCTURE_CONTROLLER: 'controller';
+declare const STRUCTURE_LINK: 'link';
+declare const STRUCTURE_STORAGE: 'storage';
+declare const STRUCTURE_TOWER: 'tower';
+declare const STRUCTURE_OBSERVER: 'observer';
+declare const STRUCTURE_POWER_BANK: 'powerBank';
+declare const STRUCTURE_POWER_SPAWN: 'powerSpawn';
+declare const STRUCTURE_EXTRACTOR: 'extractor';
+declare const STRUCTURE_LAB: 'lab';
+declare const STRUCTURE_TERMINAL: 'terminal';
+declare const STRUCTURE_CONTAINER: 'container';
+declare const STRUCTURE_NUKER: 'nuker';
+declare const STRUCTURE_FACTORY: 'factory';
+declare const STRUCTURE_INVADER_CORE: 'invaderCore';
+declare const CONSTRUCTION_COST: { 'spawn': 15000, 'extension': 3000, 'road': 300, 'constructedWall': 1, 'rampart': 1, 'link': 5000, 'storage': 30000, 'tower': 5000, 'observer': 8000, 'powerSpawn': 100000, 'extractor': 5000, 'lab': 50000, 'terminal': 100000, 'container': 5000, 'nuker': 100000, 'factory': 100000 };
 declare const CONSTRUCTION_COST_ROAD_SWAMP_RATIO: 5;
 declare const CONSTRUCTION_COST_ROAD_WALL_RATIO: 150;
-declare const CONTROLLER_LEVELS: { "1": 200, "2": 45000, "3": 135000, "4": 405000, "5": 1215000, "6": 3645000, "7": 10935000 };
-declare const CONTROLLER_STRUCTURES: { "spawn": { "0": 0, "1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "6": 1, "7": 2, "8": 3 }, "extension": { "0": 0, "1": 0, "2": 5, "3": 10, "4": 20, "5": 30, "6": 40, "7": 50, "8": 60 }, "link": { "1": 0, "2": 0, "3": 0, "4": 0, "5": 2, "6": 3, "7": 4, "8": 6 }, "road": { "0": 2500, "1": 2500, "2": 2500, "3": 2500, "4": 2500, "5": 2500, "6": 2500, "7": 2500, "8": 2500 }, "constructedWall": { "1": 0, "2": 2500, "3": 2500, "4": 2500, "5": 2500, "6": 2500, "7": 2500, "8": 2500 }, "rampart": { "1": 0, "2": 2500, "3": 2500, "4": 2500, "5": 2500, "6": 2500, "7": 2500, "8": 2500 }, "storage": { "1": 0, "2": 0, "3": 0, "4": 1, "5": 1, "6": 1, "7": 1, "8": 1 }, "tower": { "1": 0, "2": 0, "3": 1, "4": 1, "5": 2, "6": 2, "7": 3, "8": 6 }, "observer": { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 1 }, "powerSpawn": { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 1 }, "extractor": { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 1, "7": 1, "8": 1 }, "terminal": { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 1, "7": 1, "8": 1 }, "lab": { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 3, "7": 6, "8": 10 }, "container": { "0": 5, "1": 5, "2": 5, "3": 5, "4": 5, "5": 5, "6": 5, "7": 5, "8": 5 }, "nuker": { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 1 }, "factory": { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 1, "8": 1 } };
-declare const CONTROLLER_DOWNGRADE: { "1": 20000, "2": 10000, "3": 20000, "4": 40000, "5": 80000, "6": 120000, "7": 150000, "8": 200000 };
+declare const CONTROLLER_LEVELS: { '1': 200, '2': 45000, '3': 135000, '4': 405000, '5': 1215000, '6': 3645000, '7': 10935000 };
+declare const CONTROLLER_STRUCTURES: { 'spawn': { '0': 0, '1': 1, '2': 1, '3': 1, '4': 1, '5': 1, '6': 1, '7': 2, '8': 3 }, 'extension': { '0': 0, '1': 0, '2': 5, '3': 10, '4': 20, '5': 30, '6': 40, '7': 50, '8': 60 }, 'link': { '1': 0, '2': 0, '3': 0, '4': 0, '5': 2, '6': 3, '7': 4, '8': 6 }, 'road': { '0': 2500, '1': 2500, '2': 2500, '3': 2500, '4': 2500, '5': 2500, '6': 2500, '7': 2500, '8': 2500 }, 'constructedWall': { '1': 0, '2': 2500, '3': 2500, '4': 2500, '5': 2500, '6': 2500, '7': 2500, '8': 2500 }, 'rampart': { '1': 0, '2': 2500, '3': 2500, '4': 2500, '5': 2500, '6': 2500, '7': 2500, '8': 2500 }, 'storage': { '1': 0, '2': 0, '3': 0, '4': 1, '5': 1, '6': 1, '7': 1, '8': 1 }, 'tower': { '1': 0, '2': 0, '3': 1, '4': 1, '5': 2, '6': 2, '7': 3, '8': 6 }, 'observer': { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 1 }, 'powerSpawn': { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 1 }, 'extractor': { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 1, '7': 1, '8': 1 }, 'terminal': { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 1, '7': 1, '8': 1 }, 'lab': { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 3, '7': 6, '8': 10 }, 'container': { '0': 5, '1': 5, '2': 5, '3': 5, '4': 5, '5': 5, '6': 5, '7': 5, '8': 5 }, 'nuker': { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 1 }, 'factory': { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 1, '8': 1 } };
+declare const CONTROLLER_DOWNGRADE: { '1': 20000, '2': 10000, '3': 20000, '4': 40000, '5': 80000, '6': 120000, '7': 150000, '8': 200000 };
 declare const CONTROLLER_DOWNGRADE_RESTORE: 100;
 declare const CONTROLLER_DOWNGRADE_SAFEMODE_THRESHOLD: 5000;
 declare const CONTROLLER_CLAIM_DOWNGRADE: 300;
@@ -220,10 +220,10 @@ declare const TERRAIN_MASK_LAVA: 4;
 declare const MAX_CONSTRUCTION_SITES: 100;
 declare const MAX_CREEP_SIZE: 50;
 declare const MINERAL_REGEN_TIME: 50000;
-declare const MINERAL_MIN_AMOUNT: { "H": 35000, "O": 35000, "L": 35000, "K": 35000, "Z": 35000, "U": 35000, "X": 35000 };
+declare const MINERAL_MIN_AMOUNT: { 'H': 35000, 'O': 35000, 'L': 35000, 'K': 35000, 'Z': 35000, 'U': 35000, 'X': 35000 };
 declare const MINERAL_RANDOM_FACTOR: 2;
-declare const MINERAL_DENSITY: { "1": 15000, "2": 35000, "3": 70000, "4": 100000 };
-declare const MINERAL_DENSITY_PROBABILITY: { "1": 0.1, "2": 0.5, "3": 0.9, "4": 1 };
+declare const MINERAL_DENSITY: { '1': 15000, '2': 35000, '3': 70000, '4': 100000 };
+declare const MINERAL_DENSITY_PROBABILITY: { '1': 0.1, '2': 0.5, '3': 0.9, '4': 1 };
 declare const MINERAL_DENSITY_CHANGE: 0.05;
 declare const DENSITY_LOW: 1;
 declare const DENSITY_MODERATE: 2;
@@ -248,117 +248,117 @@ declare const NUKER_ENERGY_CAPACITY: 300000;
 declare const NUKER_GHODIUM_CAPACITY: 5000;
 declare const NUKE_LAND_TIME: 50000;
 declare const NUKE_RANGE: 10;
-declare const NUKE_DAMAGE: { "0": 10000000, "2": 5000000 };
+declare const NUKE_DAMAGE: { '0': 10000000, '2': 5000000 };
 declare const FACTORY_HITS: 1000;
 declare const FACTORY_CAPACITY: 50000;
 declare const TOMBSTONE_DECAY_PER_PART: 5;
 declare const TOMBSTONE_DECAY_POWER_CREEP: 500;
 declare const RUIN_DECAY: 500;
-declare const RUIN_DECAY_STRUCTURES: { "powerBank": 10 };
+declare const RUIN_DECAY_STRUCTURES: { 'powerBank': 10 };
 declare const PORTAL_DECAY: 30000;
-declare const ORDER_SELL: "sell";
-declare const ORDER_BUY: "buy";
+declare const ORDER_SELL: 'sell';
+declare const ORDER_BUY: 'buy';
 declare const MARKET_FEE: 0.05;
 declare const MARKET_MAX_ORDERS: 300;
 declare const MARKET_ORDER_LIFE_TIME: 2592000000;
 declare const FLAGS_LIMIT: 10000;
-declare const SUBSCRIPTION_TOKEN: "token";
-declare const RESOURCE_ENERGY: "energy";
-declare const RESOURCE_POWER: "power";
-declare const RESOURCE_HYDROGEN: "H";
-declare const RESOURCE_OXYGEN: "O";
-declare const RESOURCE_UTRIUM: "U";
-declare const RESOURCE_LEMERGIUM: "L";
-declare const RESOURCE_KEANIUM: "K";
-declare const RESOURCE_ZYNTHIUM: "Z";
-declare const RESOURCE_CATALYST: "X";
-declare const RESOURCE_GHODIUM: "G";
-declare const RESOURCE_SILICON: "silicon";
-declare const RESOURCE_METAL: "metal";
-declare const RESOURCE_BIOMASS: "biomass";
-declare const RESOURCE_MIST: "mist";
-declare const RESOURCE_HYDROXIDE: "OH";
-declare const RESOURCE_ZYNTHIUM_KEANITE: "ZK";
-declare const RESOURCE_UTRIUM_LEMERGITE: "UL";
-declare const RESOURCE_UTRIUM_HYDRIDE: "UH";
-declare const RESOURCE_UTRIUM_OXIDE: "UO";
-declare const RESOURCE_KEANIUM_HYDRIDE: "KH";
-declare const RESOURCE_KEANIUM_OXIDE: "KO";
-declare const RESOURCE_LEMERGIUM_HYDRIDE: "LH";
-declare const RESOURCE_LEMERGIUM_OXIDE: "LO";
-declare const RESOURCE_ZYNTHIUM_HYDRIDE: "ZH";
-declare const RESOURCE_ZYNTHIUM_OXIDE: "ZO";
-declare const RESOURCE_GHODIUM_HYDRIDE: "GH";
-declare const RESOURCE_GHODIUM_OXIDE: "GO";
-declare const RESOURCE_UTRIUM_ACID: "UH2O";
-declare const RESOURCE_UTRIUM_ALKALIDE: "UHO2";
-declare const RESOURCE_KEANIUM_ACID: "KH2O";
-declare const RESOURCE_KEANIUM_ALKALIDE: "KHO2";
-declare const RESOURCE_LEMERGIUM_ACID: "LH2O";
-declare const RESOURCE_LEMERGIUM_ALKALIDE: "LHO2";
-declare const RESOURCE_ZYNTHIUM_ACID: "ZH2O";
-declare const RESOURCE_ZYNTHIUM_ALKALIDE: "ZHO2";
-declare const RESOURCE_GHODIUM_ACID: "GH2O";
-declare const RESOURCE_GHODIUM_ALKALIDE: "GHO2";
-declare const RESOURCE_CATALYZED_UTRIUM_ACID: "XUH2O";
-declare const RESOURCE_CATALYZED_UTRIUM_ALKALIDE: "XUHO2";
-declare const RESOURCE_CATALYZED_KEANIUM_ACID: "XKH2O";
-declare const RESOURCE_CATALYZED_KEANIUM_ALKALIDE: "XKHO2";
-declare const RESOURCE_CATALYZED_LEMERGIUM_ACID: "XLH2O";
-declare const RESOURCE_CATALYZED_LEMERGIUM_ALKALIDE: "XLHO2";
-declare const RESOURCE_CATALYZED_ZYNTHIUM_ACID: "XZH2O";
-declare const RESOURCE_CATALYZED_ZYNTHIUM_ALKALIDE: "XZHO2";
-declare const RESOURCE_CATALYZED_GHODIUM_ACID: "XGH2O";
-declare const RESOURCE_CATALYZED_GHODIUM_ALKALIDE: "XGHO2";
-declare const RESOURCE_OPS: "ops";
-declare const RESOURCE_UTRIUM_BAR: "utrium_bar";
-declare const RESOURCE_LEMERGIUM_BAR: "lemergium_bar";
-declare const RESOURCE_ZYNTHIUM_BAR: "zynthium_bar";
-declare const RESOURCE_KEANIUM_BAR: "keanium_bar";
-declare const RESOURCE_GHODIUM_MELT: "ghodium_melt";
-declare const RESOURCE_OXIDANT: "oxidant";
-declare const RESOURCE_REDUCTANT: "reductant";
-declare const RESOURCE_PURIFIER: "purifier";
-declare const RESOURCE_BATTERY: "battery";
-declare const RESOURCE_COMPOSITE: "composite";
-declare const RESOURCE_CRYSTAL: "crystal";
-declare const RESOURCE_LIQUID: "liquid";
-declare const RESOURCE_WIRE: "wire";
-declare const RESOURCE_SWITCH: "switch";
-declare const RESOURCE_TRANSISTOR: "transistor";
-declare const RESOURCE_MICROCHIP: "microchip";
-declare const RESOURCE_CIRCUIT: "circuit";
-declare const RESOURCE_DEVICE: "device";
-declare const RESOURCE_CELL: "cell";
-declare const RESOURCE_PHLEGM: "phlegm";
-declare const RESOURCE_TISSUE: "tissue";
-declare const RESOURCE_MUSCLE: "muscle";
-declare const RESOURCE_ORGANOID: "organoid";
-declare const RESOURCE_ORGANISM: "organism";
-declare const RESOURCE_ALLOY: "alloy";
-declare const RESOURCE_TUBE: "tube";
-declare const RESOURCE_FIXTURES: "fixtures";
-declare const RESOURCE_FRAME: "frame";
-declare const RESOURCE_HYDRAULICS: "hydraulics";
-declare const RESOURCE_MACHINE: "machine";
-declare const RESOURCE_CONDENSATE: "condensate";
-declare const RESOURCE_CONCENTRATE: "concentrate";
-declare const RESOURCE_EXTRACT: "extract";
-declare const RESOURCE_SPIRIT: "spirit";
-declare const RESOURCE_EMANATION: "emanation";
-declare const RESOURCE_ESSENCE: "essence";
-declare const REACTIONS: { "H": { "O": "OH", "L": "LH", "K": "KH", "U": "UH", "Z": "ZH", "G": "GH" }, "O": { "H": "OH", "L": "LO", "K": "KO", "U": "UO", "Z": "ZO", "G": "GO" }, "Z": { "K": "ZK", "H": "ZH", "O": "ZO" }, "L": { "U": "UL", "H": "LH", "O": "LO" }, "K": { "Z": "ZK", "H": "KH", "O": "KO" }, "G": { "H": "GH", "O": "GO" }, "U": { "L": "UL", "H": "UH", "O": "UO" }, "OH": { "UH": "UH2O", "UO": "UHO2", "ZH": "ZH2O", "ZO": "ZHO2", "KH": "KH2O", "KO": "KHO2", "LH": "LH2O", "LO": "LHO2", "GH": "GH2O", "GO": "GHO2" }, "X": { "UH2O": "XUH2O", "UHO2": "XUHO2", "LH2O": "XLH2O", "LHO2": "XLHO2", "KH2O": "XKH2O", "KHO2": "XKHO2", "ZH2O": "XZH2O", "ZHO2": "XZHO2", "GH2O": "XGH2O", "GHO2": "XGHO2" }, "ZK": { "UL": "G" }, "UL": { "ZK": "G" }, "LH": { "OH": "LH2O" }, "ZH": { "OH": "ZH2O" }, "GH": { "OH": "GH2O" }, "KH": { "OH": "KH2O" }, "UH": { "OH": "UH2O" }, "LO": { "OH": "LHO2" }, "ZO": { "OH": "ZHO2" }, "KO": { "OH": "KHO2" }, "UO": { "OH": "UHO2" }, "GO": { "OH": "GHO2" }, "LH2O": { "X": "XLH2O" }, "KH2O": { "X": "XKH2O" }, "ZH2O": { "X": "XZH2O" }, "UH2O": { "X": "XUH2O" }, "GH2O": { "X": "XGH2O" }, "LHO2": { "X": "XLHO2" }, "UHO2": { "X": "XUHO2" }, "KHO2": { "X": "XKHO2" }, "ZHO2": { "X": "XZHO2" }, "GHO2": { "X": "XGHO2" } };
-declare const BOOSTS: { "work": { "UO": { "harvest": 3 }, "UHO2": { "harvest": 5 }, "XUHO2": { "harvest": 7 }, "LH": { "build": 1.5, "repair": 1.5 }, "LH2O": { "build": 1.8, "repair": 1.8 }, "XLH2O": { "build": 2, "repair": 2 }, "ZH": { "dismantle": 2 }, "ZH2O": { "dismantle": 3 }, "XZH2O": { "dismantle": 4 }, "GH": { "upgradeController": 1.5 }, "GH2O": { "upgradeController": 1.8 }, "XGH2O": { "upgradeController": 2 } }, "attack": { "UH": { "attack": 2 }, "UH2O": { "attack": 3 }, "XUH2O": { "attack": 4 } }, "ranged_attack": { "KO": { "rangedAttack": 2, "rangedMassAttack": 2 }, "KHO2": { "rangedAttack": 3, "rangedMassAttack": 3 }, "XKHO2": { "rangedAttack": 4, "rangedMassAttack": 4 } }, "heal": { "LO": { "heal": 2, "rangedHeal": 2 }, "LHO2": { "heal": 3, "rangedHeal": 3 }, "XLHO2": { "heal": 4, "rangedHeal": 4 } }, "carry": { "KH": { "capacity": 2 }, "KH2O": { "capacity": 3 }, "XKH2O": { "capacity": 4 } }, "move": { "ZO": { "fatigue": 2 }, "ZHO2": { "fatigue": 3 }, "XZHO2": { "fatigue": 4 } }, "tough": { "GO": { "damage": 0.7 }, "GHO2": { "damage": 0.5 }, "XGHO2": { "damage": 0.3 } } };
-declare const REACTION_TIME: { "OH": 20, "ZK": 5, "UL": 5, "G": 5, "UH": 10, "UH2O": 5, "XUH2O": 60, "UO": 10, "UHO2": 5, "XUHO2": 60, "KH": 10, "KH2O": 5, "XKH2O": 60, "KO": 10, "KHO2": 5, "XKHO2": 60, "LH": 15, "LH2O": 10, "XLH2O": 65, "LO": 10, "LHO2": 5, "XLHO2": 60, "ZH": 20, "ZH2O": 40, "XZH2O": 160, "ZO": 10, "ZHO2": 5, "XZHO2": 60, "GH": 10, "GH2O": 15, "XGH2O": 80, "GO": 10, "GHO2": 30, "XGHO2": 150 };
+declare const SUBSCRIPTION_TOKEN: 'token';
+declare const RESOURCE_ENERGY: 'energy';
+declare const RESOURCE_POWER: 'power';
+declare const RESOURCE_HYDROGEN: 'H';
+declare const RESOURCE_OXYGEN: 'O';
+declare const RESOURCE_UTRIUM: 'U';
+declare const RESOURCE_LEMERGIUM: 'L';
+declare const RESOURCE_KEANIUM: 'K';
+declare const RESOURCE_ZYNTHIUM: 'Z';
+declare const RESOURCE_CATALYST: 'X';
+declare const RESOURCE_GHODIUM: 'G';
+declare const RESOURCE_SILICON: 'silicon';
+declare const RESOURCE_METAL: 'metal';
+declare const RESOURCE_BIOMASS: 'biomass';
+declare const RESOURCE_MIST: 'mist';
+declare const RESOURCE_HYDROXIDE: 'OH';
+declare const RESOURCE_ZYNTHIUM_KEANITE: 'ZK';
+declare const RESOURCE_UTRIUM_LEMERGITE: 'UL';
+declare const RESOURCE_UTRIUM_HYDRIDE: 'UH';
+declare const RESOURCE_UTRIUM_OXIDE: 'UO';
+declare const RESOURCE_KEANIUM_HYDRIDE: 'KH';
+declare const RESOURCE_KEANIUM_OXIDE: 'KO';
+declare const RESOURCE_LEMERGIUM_HYDRIDE: 'LH';
+declare const RESOURCE_LEMERGIUM_OXIDE: 'LO';
+declare const RESOURCE_ZYNTHIUM_HYDRIDE: 'ZH';
+declare const RESOURCE_ZYNTHIUM_OXIDE: 'ZO';
+declare const RESOURCE_GHODIUM_HYDRIDE: 'GH';
+declare const RESOURCE_GHODIUM_OXIDE: 'GO';
+declare const RESOURCE_UTRIUM_ACID: 'UH2O';
+declare const RESOURCE_UTRIUM_ALKALIDE: 'UHO2';
+declare const RESOURCE_KEANIUM_ACID: 'KH2O';
+declare const RESOURCE_KEANIUM_ALKALIDE: 'KHO2';
+declare const RESOURCE_LEMERGIUM_ACID: 'LH2O';
+declare const RESOURCE_LEMERGIUM_ALKALIDE: 'LHO2';
+declare const RESOURCE_ZYNTHIUM_ACID: 'ZH2O';
+declare const RESOURCE_ZYNTHIUM_ALKALIDE: 'ZHO2';
+declare const RESOURCE_GHODIUM_ACID: 'GH2O';
+declare const RESOURCE_GHODIUM_ALKALIDE: 'GHO2';
+declare const RESOURCE_CATALYZED_UTRIUM_ACID: 'XUH2O';
+declare const RESOURCE_CATALYZED_UTRIUM_ALKALIDE: 'XUHO2';
+declare const RESOURCE_CATALYZED_KEANIUM_ACID: 'XKH2O';
+declare const RESOURCE_CATALYZED_KEANIUM_ALKALIDE: 'XKHO2';
+declare const RESOURCE_CATALYZED_LEMERGIUM_ACID: 'XLH2O';
+declare const RESOURCE_CATALYZED_LEMERGIUM_ALKALIDE: 'XLHO2';
+declare const RESOURCE_CATALYZED_ZYNTHIUM_ACID: 'XZH2O';
+declare const RESOURCE_CATALYZED_ZYNTHIUM_ALKALIDE: 'XZHO2';
+declare const RESOURCE_CATALYZED_GHODIUM_ACID: 'XGH2O';
+declare const RESOURCE_CATALYZED_GHODIUM_ALKALIDE: 'XGHO2';
+declare const RESOURCE_OPS: 'ops';
+declare const RESOURCE_UTRIUM_BAR: 'utrium_bar';
+declare const RESOURCE_LEMERGIUM_BAR: 'lemergium_bar';
+declare const RESOURCE_ZYNTHIUM_BAR: 'zynthium_bar';
+declare const RESOURCE_KEANIUM_BAR: 'keanium_bar';
+declare const RESOURCE_GHODIUM_MELT: 'ghodium_melt';
+declare const RESOURCE_OXIDANT: 'oxidant';
+declare const RESOURCE_REDUCTANT: 'reductant';
+declare const RESOURCE_PURIFIER: 'purifier';
+declare const RESOURCE_BATTERY: 'battery';
+declare const RESOURCE_COMPOSITE: 'composite';
+declare const RESOURCE_CRYSTAL: 'crystal';
+declare const RESOURCE_LIQUID: 'liquid';
+declare const RESOURCE_WIRE: 'wire';
+declare const RESOURCE_SWITCH: 'switch';
+declare const RESOURCE_TRANSISTOR: 'transistor';
+declare const RESOURCE_MICROCHIP: 'microchip';
+declare const RESOURCE_CIRCUIT: 'circuit';
+declare const RESOURCE_DEVICE: 'device';
+declare const RESOURCE_CELL: 'cell';
+declare const RESOURCE_PHLEGM: 'phlegm';
+declare const RESOURCE_TISSUE: 'tissue';
+declare const RESOURCE_MUSCLE: 'muscle';
+declare const RESOURCE_ORGANOID: 'organoid';
+declare const RESOURCE_ORGANISM: 'organism';
+declare const RESOURCE_ALLOY: 'alloy';
+declare const RESOURCE_TUBE: 'tube';
+declare const RESOURCE_FIXTURES: 'fixtures';
+declare const RESOURCE_FRAME: 'frame';
+declare const RESOURCE_HYDRAULICS: 'hydraulics';
+declare const RESOURCE_MACHINE: 'machine';
+declare const RESOURCE_CONDENSATE: 'condensate';
+declare const RESOURCE_CONCENTRATE: 'concentrate';
+declare const RESOURCE_EXTRACT: 'extract';
+declare const RESOURCE_SPIRIT: 'spirit';
+declare const RESOURCE_EMANATION: 'emanation';
+declare const RESOURCE_ESSENCE: 'essence';
+declare const REACTIONS: { 'H': { 'O': 'OH', 'L': 'LH', 'K': 'KH', 'U': 'UH', 'Z': 'ZH', 'G': 'GH' }, 'O': { 'H': 'OH', 'L': 'LO', 'K': 'KO', 'U': 'UO', 'Z': 'ZO', 'G': 'GO' }, 'Z': { 'K': 'ZK', 'H': 'ZH', 'O': 'ZO' }, 'L': { 'U': 'UL', 'H': 'LH', 'O': 'LO' }, 'K': { 'Z': 'ZK', 'H': 'KH', 'O': 'KO' }, 'G': { 'H': 'GH', 'O': 'GO' }, 'U': { 'L': 'UL', 'H': 'UH', 'O': 'UO' }, 'OH': { 'UH': 'UH2O', 'UO': 'UHO2', 'ZH': 'ZH2O', 'ZO': 'ZHO2', 'KH': 'KH2O', 'KO': 'KHO2', 'LH': 'LH2O', 'LO': 'LHO2', 'GH': 'GH2O', 'GO': 'GHO2' }, 'X': { 'UH2O': 'XUH2O', 'UHO2': 'XUHO2', 'LH2O': 'XLH2O', 'LHO2': 'XLHO2', 'KH2O': 'XKH2O', 'KHO2': 'XKHO2', 'ZH2O': 'XZH2O', 'ZHO2': 'XZHO2', 'GH2O': 'XGH2O', 'GHO2': 'XGHO2' }, 'ZK': { 'UL': 'G' }, 'UL': { 'ZK': 'G' }, 'LH': { 'OH': 'LH2O' }, 'ZH': { 'OH': 'ZH2O' }, 'GH': { 'OH': 'GH2O' }, 'KH': { 'OH': 'KH2O' }, 'UH': { 'OH': 'UH2O' }, 'LO': { 'OH': 'LHO2' }, 'ZO': { 'OH': 'ZHO2' }, 'KO': { 'OH': 'KHO2' }, 'UO': { 'OH': 'UHO2' }, 'GO': { 'OH': 'GHO2' }, 'LH2O': { 'X': 'XLH2O' }, 'KH2O': { 'X': 'XKH2O' }, 'ZH2O': { 'X': 'XZH2O' }, 'UH2O': { 'X': 'XUH2O' }, 'GH2O': { 'X': 'XGH2O' }, 'LHO2': { 'X': 'XLHO2' }, 'UHO2': { 'X': 'XUHO2' }, 'KHO2': { 'X': 'XKHO2' }, 'ZHO2': { 'X': 'XZHO2' }, 'GHO2': { 'X': 'XGHO2' } };
+declare const BOOSTS: { 'work': { 'UO': { 'harvest': 3 }, 'UHO2': { 'harvest': 5 }, 'XUHO2': { 'harvest': 7 }, 'LH': { 'build': 1.5, 'repair': 1.5 }, 'LH2O': { 'build': 1.8, 'repair': 1.8 }, 'XLH2O': { 'build': 2, 'repair': 2 }, 'ZH': { 'dismantle': 2 }, 'ZH2O': { 'dismantle': 3 }, 'XZH2O': { 'dismantle': 4 }, 'GH': { 'upgradeController': 1.5 }, 'GH2O': { 'upgradeController': 1.8 }, 'XGH2O': { 'upgradeController': 2 } }, 'attack': { 'UH': { 'attack': 2 }, 'UH2O': { 'attack': 3 }, 'XUH2O': { 'attack': 4 } }, 'ranged_attack': { 'KO': { 'rangedAttack': 2, 'rangedMassAttack': 2 }, 'KHO2': { 'rangedAttack': 3, 'rangedMassAttack': 3 }, 'XKHO2': { 'rangedAttack': 4, 'rangedMassAttack': 4 } }, 'heal': { 'LO': { 'heal': 2, 'rangedHeal': 2 }, 'LHO2': { 'heal': 3, 'rangedHeal': 3 }, 'XLHO2': { 'heal': 4, 'rangedHeal': 4 } }, 'carry': { 'KH': { 'capacity': 2 }, 'KH2O': { 'capacity': 3 }, 'XKH2O': { 'capacity': 4 } }, 'move': { 'ZO': { 'fatigue': 2 }, 'ZHO2': { 'fatigue': 3 }, 'XZHO2': { 'fatigue': 4 } }, 'tough': { 'GO': { 'damage': 0.7 }, 'GHO2': { 'damage': 0.5 }, 'XGHO2': { 'damage': 0.3 } } };
+declare const REACTION_TIME: { 'OH': 20, 'ZK': 5, 'UL': 5, 'G': 5, 'UH': 10, 'UH2O': 5, 'XUH2O': 60, 'UO': 10, 'UHO2': 5, 'XUHO2': 60, 'KH': 10, 'KH2O': 5, 'XKH2O': 60, 'KO': 10, 'KHO2': 5, 'XKHO2': 60, 'LH': 15, 'LH2O': 10, 'XLH2O': 65, 'LO': 10, 'LHO2': 5, 'XLHO2': 60, 'ZH': 20, 'ZH2O': 40, 'XZH2O': 160, 'ZO': 10, 'ZHO2': 5, 'XZHO2': 60, 'GH': 10, 'GH2O': 15, 'XGH2O': 80, 'GO': 10, 'GHO2': 30, 'XGHO2': 150 };
 declare const PORTAL_UNSTABLE: 864000000;
 declare const PORTAL_MIN_TIMEOUT: 1036800000;
 declare const PORTAL_MAX_TIMEOUT: 1900800000;
 declare const POWER_BANK_RESPAWN_TIME: 50000;
 declare const INVADERS_ENERGY_GOAL: 100000;
-declare const SYSTEM_USERNAME: "Screeps";
-declare const SIGN_NOVICE_AREA: "A new Novice or Respawn Area is being planned somewhere in this sector. Please make sure all important rooms are reserved.";
-declare const SIGN_RESPAWN_AREA: "A new Novice or Respawn Area is being planned somewhere in this sector. Please make sure all important rooms are reserved.";
-declare const SIGN_PLANNED_AREA: "A new Novice or Respawn Area is being planned somewhere in this sector. Please make sure all important rooms are reserved.";
+declare const SYSTEM_USERNAME: 'Screeps';
+declare const SIGN_NOVICE_AREA: 'A new Novice or Respawn Area is being planned somewhere in this sector. Please make sure all important rooms are reserved.';
+declare const SIGN_RESPAWN_AREA: 'A new Novice or Respawn Area is being planned somewhere in this sector. Please make sure all important rooms are reserved.';
+declare const SIGN_PLANNED_AREA: 'A new Novice or Respawn Area is being planned somewhere in this sector. Please make sure all important rooms are reserved.';
 declare const EVENT_ATTACK: 1;
 declare const EVENT_OBJECT_DESTROYED: 2;
 declare const EVENT_ATTACK_CONTROLLER: 3;
@@ -385,7 +385,7 @@ declare const POWER_CREEP_SPAWN_COOLDOWN: 28800000;
 declare const POWER_CREEP_DELETE_COOLDOWN: 86400000;
 declare const POWER_CREEP_MAX_LEVEL: 25;
 declare const POWER_CREEP_LIFE_TIME: 5000;
-declare const POWER_CLASS: { "OPERATOR": "operator" };
+declare const POWER_CLASS: { 'OPERATOR': 'operator' };
 declare const PWR_GENERATE_OPS: 1;
 declare const PWR_OPERATE_SPAWN: 2;
 declare const PWR_OPERATE_TOWER: 3;
@@ -408,18 +408,18 @@ declare const PWR_OPERATE_FACTORY: 19;
 declare const EFFECT_INVULNERABILITY: 1001;
 declare const EFFECT_COLLAPSE_TIMER: 1002;
 declare const INVADER_CORE_HITS: 100000;
-declare const INVADER_CORE_CREEP_SPAWN_TIME: { "0": 0, "1": 0, "2": 6, "3": 3, "4": 2, "5": 1 };
-declare const INVADER_CORE_EXPAND_TIME: { "1": 4000, "2": 3500, "3": 3000, "4": 2500, "5": 2000 };
+declare const INVADER_CORE_CREEP_SPAWN_TIME: { '0': 0, '1': 0, '2': 6, '3': 3, '4': 2, '5': 1 };
+declare const INVADER_CORE_EXPAND_TIME: { '1': 4000, '2': 3500, '3': 3000, '4': 2500, '5': 2000 };
 declare const INVADER_CORE_CONTROLLER_POWER: 2;
 declare const INVADER_CORE_CONTROLLER_DOWNGRADE: 5000;
-declare const STRONGHOLD_RAMPART_HITS: { "0": 0, "1": 100000, "2": 200000, "3": 500000, "4": 1000000, "5": 2000000 };
+declare const STRONGHOLD_RAMPART_HITS: { '0': 0, '1': 100000, '2': 200000, '3': 500000, '4': 1000000, '5': 2000000 };
 declare const STRONGHOLD_DECAY_TICKS: 75000;
-declare const POWER_INFO: { "1": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 50, "effect": [1, 2, 4, 6, 8] }, "2": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 300, "duration": 1000, "range": 3, "ops": 100, "effect": [0.9, 0.7, 0.5, 0.35, 0.2] }, "3": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 10, "duration": 100, "range": 3, "ops": 10, "effect": [1.1, 1.2, 1.3, 1.4, 1.5] }, "4": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 800, "duration": 1000, "range": 3, "ops": 100, "effect": [500000, 1000000, 2000000, 4000000, 7000000] }, "5": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 50, "duration": 1000, "range": 3, "ops": 10, "effect": [2, 4, 6, 8, 10] }, "6": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 50, "range": 3, "ops": 2, "effect": [0.2, 0.4, 0.6, 0.8, 1] }, "7": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 400, "duration": [200, 400, 600, 800, 1000], "range": 3, "ops": 10 }, "8": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 500, "duration": 1000, "range": 3, "ops": 100, "effect": [0.9, 0.8, 0.7, 0.6, 0.5] }, "9": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 5, "range": 20, "ops": 10, "duration": [1, 2, 3, 4, 5] }, "10": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 0, "duration": 5, "range": 50, "ops": 10, "effect": [0.9, 0.8, 0.7, 0.6, 0.5] }, "11": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 100, "range": 3, "ops": 100, "duration": [100, 200, 300, 400, 500] }, "12": { "className": "operator", "level": [0, 2, 7, 14, 22], "effect": [5000, 10000, 15000, 20000, 25000], "duration": 50, "cooldown": 20, "energy": 100 }, "13": { "className": "operator", "level": [10, 11, 12, 14, 22], "cooldown": 100, "duration": 300, "range": 3, "effect": [50, 100, 150, 200, 250], "period": 15 }, "14": { "className": "operator", "level": [10, 11, 12, 14, 22], "cooldown": 100, "duration": 100, "range": 3, "effect": [2, 4, 6, 8, 10], "period": 10 }, "15": { "className": "operator", "level": [20, 21, 22, 23, 24], "cooldown": 8, "duration": 10, "range": 50, "ops": [50, 40, 30, 20, 10] }, "16": { "className": "operator", "level": [10, 11, 12, 14, 22], "cooldown": 800, "range": 3, "duration": 1000, "ops": 200, "effect": [1, 2, 3, 4, 5] }, "17": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 5, "range": 3, "ops": 5, "duration": [1, 2, 3, 4, 5] }, "18": { "className": "operator", "level": [20, 21, 22, 23, 24], "cooldown": 800, "range": 3, "duration": 1000, "ops": 200, "effect": [10, 20, 30, 40, 50] }, "19": { "className": "operator", "level": [0, 2, 7, 14, 22], "cooldown": 800, "range": 3, "duration": 1000, "ops": 100 } };
-declare const BODYPARTS_ALL: ["move", "work", "carry", "attack", "ranged_attack", "tough", "heal", "claim"];
-declare const RESOURCES_ALL: ["energy", "power", "H", "O", "U", "K", "L", "Z", "X", "G", "OH", "ZK", "UL", "UH", "UO", "KH", "KO", "LH", "LO", "ZH", "ZO", "GH", "GO", "UH2O", "UHO2", "KH2O", "KHO2", "LH2O", "LHO2", "ZH2O", "ZHO2", "GH2O", "GHO2", "XUH2O", "XUHO2", "XKH2O", "XKHO2", "XLH2O", "XLHO2", "XZH2O", "XZHO2", "XGH2O", "XGHO2", "ops", "silicon", "metal", "biomass", "mist", "utrium_bar", "lemergium_bar", "zynthium_bar", "keanium_bar", "ghodium_melt", "oxidant", "reductant", "purifier", "battery", "composite", "crystal", "liquid", "wire", "switch", "transistor", "microchip", "circuit", "device", "cell", "phlegm", "tissue", "muscle", "organoid", "organism", "alloy", "tube", "fixtures", "frame", "hydraulics", "machine", "condensate", "concentrate", "extract", "spirit", "emanation", "essence"];
+declare const POWER_INFO: { '1': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 50, 'effect': [1, 2, 4, 6, 8] }, '2': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 300, 'duration': 1000, 'range': 3, 'ops': 100, 'effect': [0.9, 0.7, 0.5, 0.35, 0.2] }, '3': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 10, 'duration': 100, 'range': 3, 'ops': 10, 'effect': [1.1, 1.2, 1.3, 1.4, 1.5] }, '4': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 800, 'duration': 1000, 'range': 3, 'ops': 100, 'effect': [500000, 1000000, 2000000, 4000000, 7000000] }, '5': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 50, 'duration': 1000, 'range': 3, 'ops': 10, 'effect': [2, 4, 6, 8, 10] }, '6': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 50, 'range': 3, 'ops': 2, 'effect': [0.2, 0.4, 0.6, 0.8, 1] }, '7': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 400, 'duration': [200, 400, 600, 800, 1000], 'range': 3, 'ops': 10 }, '8': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 500, 'duration': 1000, 'range': 3, 'ops': 100, 'effect': [0.9, 0.8, 0.7, 0.6, 0.5] }, '9': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 5, 'range': 20, 'ops': 10, 'duration': [1, 2, 3, 4, 5] }, '10': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 0, 'duration': 5, 'range': 50, 'ops': 10, 'effect': [0.9, 0.8, 0.7, 0.6, 0.5] }, '11': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 100, 'range': 3, 'ops': 100, 'duration': [100, 200, 300, 400, 500] }, '12': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'effect': [5000, 10000, 15000, 20000, 25000], 'duration': 50, 'cooldown': 20, 'energy': 100 }, '13': { 'className': 'operator', 'level': [10, 11, 12, 14, 22], 'cooldown': 100, 'duration': 300, 'range': 3, 'effect': [50, 100, 150, 200, 250], 'period': 15 }, '14': { 'className': 'operator', 'level': [10, 11, 12, 14, 22], 'cooldown': 100, 'duration': 100, 'range': 3, 'effect': [2, 4, 6, 8, 10], 'period': 10 }, '15': { 'className': 'operator', 'level': [20, 21, 22, 23, 24], 'cooldown': 8, 'duration': 10, 'range': 50, 'ops': [50, 40, 30, 20, 10] }, '16': { 'className': 'operator', 'level': [10, 11, 12, 14, 22], 'cooldown': 800, 'range': 3, 'duration': 1000, 'ops': 200, 'effect': [1, 2, 3, 4, 5] }, '17': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 5, 'range': 3, 'ops': 5, 'duration': [1, 2, 3, 4, 5] }, '18': { 'className': 'operator', 'level': [20, 21, 22, 23, 24], 'cooldown': 800, 'range': 3, 'duration': 1000, 'ops': 200, 'effect': [10, 20, 30, 40, 50] }, '19': { 'className': 'operator', 'level': [0, 2, 7, 14, 22], 'cooldown': 800, 'range': 3, 'duration': 1000, 'ops': 100 } };
+declare const BODYPARTS_ALL: ['move', 'work', 'carry', 'attack', 'ranged_attack', 'tough', 'heal', 'claim'];
+declare const RESOURCES_ALL: ['energy', 'power', 'H', 'O', 'U', 'K', 'L', 'Z', 'X', 'G', 'OH', 'ZK', 'UL', 'UH', 'UO', 'KH', 'KO', 'LH', 'LO', 'ZH', 'ZO', 'GH', 'GO', 'UH2O', 'UHO2', 'KH2O', 'KHO2', 'LH2O', 'LHO2', 'ZH2O', 'ZHO2', 'GH2O', 'GHO2', 'XUH2O', 'XUHO2', 'XKH2O', 'XKHO2', 'XLH2O', 'XLHO2', 'XZH2O', 'XZHO2', 'XGH2O', 'XGHO2', 'ops', 'silicon', 'metal', 'biomass', 'mist', 'utrium_bar', 'lemergium_bar', 'zynthium_bar', 'keanium_bar', 'ghodium_melt', 'oxidant', 'reductant', 'purifier', 'battery', 'composite', 'crystal', 'liquid', 'wire', 'switch', 'transistor', 'microchip', 'circuit', 'device', 'cell', 'phlegm', 'tissue', 'muscle', 'organoid', 'organism', 'alloy', 'tube', 'fixtures', 'frame', 'hydraulics', 'machine', 'condensate', 'concentrate', 'extract', 'spirit', 'emanation', 'essence'];
 declare const COLORS_ALL: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-declare const INTERSHARD_RESOURCES: ["token"];
-declare const COMMODITIES: { "utrium_bar": { "amount": 100, "cooldown": 20, "components": { "U": 500, "energy": 200 } }, "U": { "amount": 500, "cooldown": 20, "components": { "utrium_bar": 100, "energy": 200 } }, "lemergium_bar": { "amount": 100, "cooldown": 20, "components": { "L": 500, "energy": 200 } }, "L": { "amount": 500, "cooldown": 20, "components": { "lemergium_bar": 100, "energy": 200 } }, "zynthium_bar": { "amount": 100, "cooldown": 20, "components": { "Z": 500, "energy": 200 } }, "Z": { "amount": 500, "cooldown": 20, "components": { "zynthium_bar": 100, "energy": 200 } }, "keanium_bar": { "amount": 100, "cooldown": 20, "components": { "K": 500, "energy": 200 } }, "K": { "amount": 500, "cooldown": 20, "components": { "keanium_bar": 100, "energy": 200 } }, "ghodium_melt": { "amount": 100, "cooldown": 20, "components": { "G": 500, "energy": 200 } }, "G": { "amount": 500, "cooldown": 20, "components": { "ghodium_melt": 100, "energy": 200 } }, "oxidant": { "amount": 100, "cooldown": 20, "components": { "O": 500, "energy": 200 } }, "O": { "amount": 500, "cooldown": 20, "components": { "oxidant": 100, "energy": 200 } }, "reductant": { "amount": 100, "cooldown": 20, "components": { "H": 500, "energy": 200 } }, "H": { "amount": 500, "cooldown": 20, "components": { "reductant": 100, "energy": 200 } }, "purifier": { "amount": 100, "cooldown": 20, "components": { "X": 500, "energy": 200 } }, "X": { "amount": 500, "cooldown": 20, "components": { "purifier": 100, "energy": 200 } }, "battery": { "amount": 50, "cooldown": 10, "components": { "energy": 600 } }, "energy": { "amount": 500, "cooldown": 10, "components": { "battery": 50 } }, "composite": { "level": 1, "amount": 20, "cooldown": 50, "components": { "utrium_bar": 20, "zynthium_bar": 20, "energy": 20 } }, "crystal": { "level": 2, "amount": 6, "cooldown": 21, "components": { "lemergium_bar": 6, "keanium_bar": 6, "purifier": 6, "energy": 45 } }, "liquid": { "level": 3, "amount": 12, "cooldown": 60, "components": { "oxidant": 12, "reductant": 12, "ghodium_melt": 12, "energy": 90 } }, "wire": { "amount": 20, "cooldown": 8, "components": { "utrium_bar": 20, "silicon": 100, "energy": 40 } }, "switch": { "level": 1, "amount": 5, "cooldown": 70, "components": { "wire": 40, "oxidant": 95, "utrium_bar": 35, "energy": 20 } }, "transistor": { "level": 2, "amount": 1, "cooldown": 59, "components": { "switch": 4, "wire": 15, "reductant": 85, "energy": 8 } }, "microchip": { "level": 3, "amount": 1, "cooldown": 250, "components": { "transistor": 2, "composite": 50, "wire": 117, "purifier": 25, "energy": 16 } }, "circuit": { "level": 4, "amount": 1, "cooldown": 800, "components": { "microchip": 1, "transistor": 5, "switch": 4, "oxidant": 115, "energy": 32 } }, "device": { "level": 5, "amount": 1, "cooldown": 600, "components": { "circuit": 1, "microchip": 3, "crystal": 110, "ghodium_melt": 150, "energy": 64 } }, "cell": { "amount": 20, "cooldown": 8, "components": { "lemergium_bar": 20, "biomass": 100, "energy": 40 } }, "phlegm": { "level": 1, "amount": 2, "cooldown": 35, "components": { "cell": 20, "oxidant": 36, "lemergium_bar": 16, "energy": 8 } }, "tissue": { "level": 2, "amount": 2, "cooldown": 164, "components": { "phlegm": 10, "cell": 10, "reductant": 110, "energy": 16 } }, "muscle": { "level": 3, "amount": 1, "cooldown": 250, "components": { "tissue": 3, "phlegm": 3, "zynthium_bar": 50, "reductant": 50, "energy": 16 } }, "organoid": { "level": 4, "amount": 1, "cooldown": 800, "components": { "muscle": 1, "tissue": 5, "purifier": 208, "oxidant": 256, "energy": 32 } }, "organism": { "level": 5, "amount": 1, "cooldown": 600, "components": { "organoid": 1, "liquid": 150, "tissue": 6, "cell": 310, "energy": 64 } }, "alloy": { "amount": 20, "cooldown": 8, "components": { "zynthium_bar": 20, "metal": 100, "energy": 40 } }, "tube": { "level": 1, "amount": 2, "cooldown": 45, "components": { "alloy": 40, "zynthium_bar": 16, "energy": 8 } }, "fixtures": { "level": 2, "amount": 1, "cooldown": 115, "components": { "composite": 20, "alloy": 41, "oxidant": 161, "energy": 8 } }, "frame": { "level": 3, "amount": 1, "cooldown": 125, "components": { "fixtures": 2, "tube": 4, "reductant": 330, "zynthium_bar": 31, "energy": 16 } }, "hydraulics": { "level": 4, "amount": 1, "cooldown": 800, "components": { "liquid": 150, "fixtures": 3, "tube": 15, "purifier": 208, "energy": 32 } }, "machine": { "level": 5, "amount": 1, "cooldown": 600, "components": { "hydraulics": 1, "frame": 2, "fixtures": 3, "tube": 12, "energy": 64 } }, "condensate": { "amount": 20, "cooldown": 8, "components": { "keanium_bar": 20, "mist": 100, "energy": 40 } }, "concentrate": { "level": 1, "amount": 3, "cooldown": 41, "components": { "condensate": 30, "keanium_bar": 15, "reductant": 54, "energy": 12 } }, "extract": { "level": 2, "amount": 2, "cooldown": 128, "components": { "concentrate": 10, "condensate": 30, "oxidant": 60, "energy": 16 } }, "spirit": { "level": 3, "amount": 1, "cooldown": 200, "components": { "extract": 2, "concentrate": 6, "reductant": 90, "purifier": 20, "energy": 16 } }, "emanation": { "level": 4, "amount": 1, "cooldown": 800, "components": { "spirit": 2, "extract": 2, "concentrate": 3, "keanium_bar": 112, "energy": 32 } }, "essence": { "level": 5, "amount": 1, "cooldown": 600, "components": { "emanation": 1, "spirit": 3, "crystal": 110, "ghodium_melt": 150, "energy": 64 } } };
+declare const INTERSHARD_RESOURCES: ['token'];
+declare const COMMODITIES: { 'utrium_bar': { 'amount': 100, 'cooldown': 20, 'components': { 'U': 500, 'energy': 200 } }, 'U': { 'amount': 500, 'cooldown': 20, 'components': { 'utrium_bar': 100, 'energy': 200 } }, 'lemergium_bar': { 'amount': 100, 'cooldown': 20, 'components': { 'L': 500, 'energy': 200 } }, 'L': { 'amount': 500, 'cooldown': 20, 'components': { 'lemergium_bar': 100, 'energy': 200 } }, 'zynthium_bar': { 'amount': 100, 'cooldown': 20, 'components': { 'Z': 500, 'energy': 200 } }, 'Z': { 'amount': 500, 'cooldown': 20, 'components': { 'zynthium_bar': 100, 'energy': 200 } }, 'keanium_bar': { 'amount': 100, 'cooldown': 20, 'components': { 'K': 500, 'energy': 200 } }, 'K': { 'amount': 500, 'cooldown': 20, 'components': { 'keanium_bar': 100, 'energy': 200 } }, 'ghodium_melt': { 'amount': 100, 'cooldown': 20, 'components': { 'G': 500, 'energy': 200 } }, 'G': { 'amount': 500, 'cooldown': 20, 'components': { 'ghodium_melt': 100, 'energy': 200 } }, 'oxidant': { 'amount': 100, 'cooldown': 20, 'components': { 'O': 500, 'energy': 200 } }, 'O': { 'amount': 500, 'cooldown': 20, 'components': { 'oxidant': 100, 'energy': 200 } }, 'reductant': { 'amount': 100, 'cooldown': 20, 'components': { 'H': 500, 'energy': 200 } }, 'H': { 'amount': 500, 'cooldown': 20, 'components': { 'reductant': 100, 'energy': 200 } }, 'purifier': { 'amount': 100, 'cooldown': 20, 'components': { 'X': 500, 'energy': 200 } }, 'X': { 'amount': 500, 'cooldown': 20, 'components': { 'purifier': 100, 'energy': 200 } }, 'battery': { 'amount': 50, 'cooldown': 10, 'components': { 'energy': 600 } }, 'energy': { 'amount': 500, 'cooldown': 10, 'components': { 'battery': 50 } }, 'composite': { 'level': 1, 'amount': 20, 'cooldown': 50, 'components': { 'utrium_bar': 20, 'zynthium_bar': 20, 'energy': 20 } }, 'crystal': { 'level': 2, 'amount': 6, 'cooldown': 21, 'components': { 'lemergium_bar': 6, 'keanium_bar': 6, 'purifier': 6, 'energy': 45 } }, 'liquid': { 'level': 3, 'amount': 12, 'cooldown': 60, 'components': { 'oxidant': 12, 'reductant': 12, 'ghodium_melt': 12, 'energy': 90 } }, 'wire': { 'amount': 20, 'cooldown': 8, 'components': { 'utrium_bar': 20, 'silicon': 100, 'energy': 40 } }, 'switch': { 'level': 1, 'amount': 5, 'cooldown': 70, 'components': { 'wire': 40, 'oxidant': 95, 'utrium_bar': 35, 'energy': 20 } }, 'transistor': { 'level': 2, 'amount': 1, 'cooldown': 59, 'components': { 'switch': 4, 'wire': 15, 'reductant': 85, 'energy': 8 } }, 'microchip': { 'level': 3, 'amount': 1, 'cooldown': 250, 'components': { 'transistor': 2, 'composite': 50, 'wire': 117, 'purifier': 25, 'energy': 16 } }, 'circuit': { 'level': 4, 'amount': 1, 'cooldown': 800, 'components': { 'microchip': 1, 'transistor': 5, 'switch': 4, 'oxidant': 115, 'energy': 32 } }, 'device': { 'level': 5, 'amount': 1, 'cooldown': 600, 'components': { 'circuit': 1, 'microchip': 3, 'crystal': 110, 'ghodium_melt': 150, 'energy': 64 } }, 'cell': { 'amount': 20, 'cooldown': 8, 'components': { 'lemergium_bar': 20, 'biomass': 100, 'energy': 40 } }, 'phlegm': { 'level': 1, 'amount': 2, 'cooldown': 35, 'components': { 'cell': 20, 'oxidant': 36, 'lemergium_bar': 16, 'energy': 8 } }, 'tissue': { 'level': 2, 'amount': 2, 'cooldown': 164, 'components': { 'phlegm': 10, 'cell': 10, 'reductant': 110, 'energy': 16 } }, 'muscle': { 'level': 3, 'amount': 1, 'cooldown': 250, 'components': { 'tissue': 3, 'phlegm': 3, 'zynthium_bar': 50, 'reductant': 50, 'energy': 16 } }, 'organoid': { 'level': 4, 'amount': 1, 'cooldown': 800, 'components': { 'muscle': 1, 'tissue': 5, 'purifier': 208, 'oxidant': 256, 'energy': 32 } }, 'organism': { 'level': 5, 'amount': 1, 'cooldown': 600, 'components': { 'organoid': 1, 'liquid': 150, 'tissue': 6, 'cell': 310, 'energy': 64 } }, 'alloy': { 'amount': 20, 'cooldown': 8, 'components': { 'zynthium_bar': 20, 'metal': 100, 'energy': 40 } }, 'tube': { 'level': 1, 'amount': 2, 'cooldown': 45, 'components': { 'alloy': 40, 'zynthium_bar': 16, 'energy': 8 } }, 'fixtures': { 'level': 2, 'amount': 1, 'cooldown': 115, 'components': { 'composite': 20, 'alloy': 41, 'oxidant': 161, 'energy': 8 } }, 'frame': { 'level': 3, 'amount': 1, 'cooldown': 125, 'components': { 'fixtures': 2, 'tube': 4, 'reductant': 330, 'zynthium_bar': 31, 'energy': 16 } }, 'hydraulics': { 'level': 4, 'amount': 1, 'cooldown': 800, 'components': { 'liquid': 150, 'fixtures': 3, 'tube': 15, 'purifier': 208, 'energy': 32 } }, 'machine': { 'level': 5, 'amount': 1, 'cooldown': 600, 'components': { 'hydraulics': 1, 'frame': 2, 'fixtures': 3, 'tube': 12, 'energy': 64 } }, 'condensate': { 'amount': 20, 'cooldown': 8, 'components': { 'keanium_bar': 20, 'mist': 100, 'energy': 40 } }, 'concentrate': { 'level': 1, 'amount': 3, 'cooldown': 41, 'components': { 'condensate': 30, 'keanium_bar': 15, 'reductant': 54, 'energy': 12 } }, 'extract': { 'level': 2, 'amount': 2, 'cooldown': 128, 'components': { 'concentrate': 10, 'condensate': 30, 'oxidant': 60, 'energy': 16 } }, 'spirit': { 'level': 3, 'amount': 1, 'cooldown': 200, 'components': { 'extract': 2, 'concentrate': 6, 'reductant': 90, 'purifier': 20, 'energy': 16 } }, 'emanation': { 'level': 4, 'amount': 1, 'cooldown': 800, 'components': { 'spirit': 2, 'extract': 2, 'concentrate': 3, 'keanium_bar': 112, 'energy': 32 } }, 'essence': { 'level': 5, 'amount': 1, 'cooldown': 600, 'components': { 'emanation': 1, 'spirit': 3, 'crystal': 110, 'ghodium_melt': 150, 'energy': 64 } } };
 
 /////////////////////////
 // Constants types
@@ -473,30 +473,30 @@ type FIND_DEPOSITS = 122;
 type FIND_RUINS = 123;
 type FindExitType = 1 | 3 | 5 | 7;
 
-type LOOK_CREEPS = "creep";
-type LOOK_ENERGY = "energy";
-type LOOK_RESOURCES = "resource";
-type LOOK_SOURCES = "source";
-type LOOK_MINERALS = "mineral";
-type LOOK_DEPOSITS = "deposit";
-type LOOK_STRUCTURES = "structure";
-type LOOK_FLAGS = "flag";
-type LOOK_CONSTRUCTION_SITES = "constructionSite";
-type LOOK_NUKES = "nuke";
-type LOOK_TERRAIN = "terrain";
-type LOOK_TOMBSTONES = "tombstone";
-type LOOK_POWER_CREEPS = "powerCreep";
-type LOOK_RUINS = "ruin";
+type LOOK_CREEPS = 'creep';
+type LOOK_ENERGY = 'energy';
+type LOOK_RESOURCES = 'resource';
+type LOOK_SOURCES = 'source';
+type LOOK_MINERALS = 'mineral';
+type LOOK_DEPOSITS = 'deposit';
+type LOOK_STRUCTURES = 'structure';
+type LOOK_FLAGS = 'flag';
+type LOOK_CONSTRUCTION_SITES = 'constructionSite';
+type LOOK_NUKES = 'nuke';
+type LOOK_TERRAIN = 'terrain';
+type LOOK_TOMBSTONES = 'tombstone';
+type LOOK_POWER_CREEPS = 'powerCreep';
+type LOOK_RUINS = 'ruin';
 
 type TERRAIN_MASK_PLAIN = 0;
 type TERRAIN_MASK_WALL = 1;
 type TERRAIN_MASK_SWAMP = 2;
-type TerrainType = "plain" | "wall" | "swamp";
+type TerrainType = 'plain' | 'wall' | 'swamp';
 
-type ORDER_SELL = "sell";
-type ORDER_BUY = "buy";
+type ORDER_SELL = 'sell';
+type ORDER_BUY = 'buy';
 
-type SUBSCRIPTION_TOKEN = "token";
+type SUBSCRIPTION_TOKEN = 'token';
 
 type EVENT_ATTACK = 1;
 type EVENT_OBJECT_DESTROYED = 2;
@@ -525,21 +525,21 @@ type EventHealType = EVENT_HEAL_TYPE_MELEE | EVENT_HEAL_TYPE_RANGED;
 
 declare type ColorType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 declare type Direction = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
-declare type BodyPart = "move" | "work" | "carry" | "attack" | "ranged_attack" | "tough" | "heal" | "claim";
+declare type BodyPart = 'move' | 'work' | 'carry' | 'attack' | 'ranged_attack' | 'tough' | 'heal' | 'claim';
 
-declare type StructureType = "spawn" | "extension" | "road" | "constructedWall" | "rampart" | "keeperLair" | "portal" | "controller" | "link" | "storage" | "tower" | "observer" | "powerBank" | "powerSpawn" | "extractor" | "lab" | "terminal" | "container" | "nuker" | "factory" | "invaderCore";
-declare type RoomObjectType = "creep" | "powerCreep" | "source" | "mineral" | "deposit" | "flag" | "nuke" | "constructionSite" | "resource" | StructureType;
+declare type StructureType = 'spawn' | 'extension' | 'road' | 'constructedWall' | 'rampart' | 'keeperLair' | 'portal' | 'controller' | 'link' | 'storage' | 'tower' | 'observer' | 'powerBank' | 'powerSpawn' | 'extractor' | 'lab' | 'terminal' | 'container' | 'nuker' | 'factory' | 'invaderCore';
+declare type RoomObjectType = 'creep' | 'powerCreep' | 'source' | 'mineral' | 'deposit' | 'flag' | 'nuke' | 'constructionSite' | 'resource' | StructureType;
 
 declare type PowerClassType = keyof typeof POWER_CLASS;
 declare type PowerType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19;
 
 declare type DensityType = 1 | 2 | 3 | 4;
 
-declare type ResourceType = "energy" | "power" | "H" | "O" | "U" | "L" | "K" | "Z" | "X" | "G" | "silicon" | "metal" | "biomass" | "mist" | "OH" | "ZK" | "UL" | "UH" | "UO" | "KH" | "KO" | "LH" | "LO" | "ZH" | "ZO" | "GH" | "GO" | "UH2O" | "UHO2" | "KH2O" | "KHO2" | "LH2O" | "LHO2" | "ZH2O" | "ZHO2" | "GH2O" | "GHO2" | "XUH2O" | "XUHO2" | "XKH2O" | "XKHO2" | "XLH2O" | "XLHO2" | "XZH2O" | "XZHO2" | "XGH2O" | "XGHO2" | "ops" | "utrium_bar" | "lemergium_bar" | "zynthium_bar" | "keanium_bar" | "ghodium_melt" | "oxidant" | "reductant" | "purifier" | "battery" | "composite" | "crystal" | "liquid" | "wire" | "switch" | "transistor" | "microchip" | "circuit" | "device" | "cell" | "phlegm" | "tissue" | "muscle" | "organoid" | "organism" | "alloy" | "tube" | "fixtures" | "frame" | "hydraulics" | "machine" | "condensate" | "concentrate" | "extract" | "spirit" | "emanation" | "essence";
-declare type MineralResourceType = "H" | "O" | "U" | "L" | "K" | "Z" | "X" | "G";
-declare type BoostResourceType = "UH" | "UO" | "KH" | "KO" | "LH" | "LO" | "ZH" | "ZO" | "GH" | "GO" | "UH2O" | "UHO2" | "KH2O" | "KHO2" | "LH2O" | "LHO2" | "ZH2O" | "ZHO2" | "GH2O" | "GHO2" | "XUH2O" | "XUHO2" | "XKH2O" | "XKHO2" | "XLH2O" | "XLHO2" | "XZH2O" | "XZHO2" | "XGH2O" | "XGHO2";
-declare type DepositResourceType = "silicon" | "metal" | "biomass" | "mist";
-declare type CommodityResourceType = "ops" | "utrium_bar" | "lemergium_bar" | "zynthium_bar" | "keanium_bar" | "ghodium_melt" | "oxidant" | "reductant" | "purifier" | "battery" | "composite" | "crystal" | "liquid" | "wire" | "switch" | "transistor" | "microchip" | "circuit" | "device" | "cell" | "phlegm" | "tissue" | "muscle" | "organoid" | "organism" | "alloy" | "tube" | "fixtures" | "frame" | "hydraulics" | "machine" | "condensate" | "concentrate" | "extract" | "spirit" | "emanation" | "essence";
+declare type ResourceType = 'energy' | 'power' | 'H' | 'O' | 'U' | 'L' | 'K' | 'Z' | 'X' | 'G' | 'silicon' | 'metal' | 'biomass' | 'mist' | 'OH' | 'ZK' | 'UL' | 'UH' | 'UO' | 'KH' | 'KO' | 'LH' | 'LO' | 'ZH' | 'ZO' | 'GH' | 'GO' | 'UH2O' | 'UHO2' | 'KH2O' | 'KHO2' | 'LH2O' | 'LHO2' | 'ZH2O' | 'ZHO2' | 'GH2O' | 'GHO2' | 'XUH2O' | 'XUHO2' | 'XKH2O' | 'XKHO2' | 'XLH2O' | 'XLHO2' | 'XZH2O' | 'XZHO2' | 'XGH2O' | 'XGHO2' | 'ops' | 'utrium_bar' | 'lemergium_bar' | 'zynthium_bar' | 'keanium_bar' | 'ghodium_melt' | 'oxidant' | 'reductant' | 'purifier' | 'battery' | 'composite' | 'crystal' | 'liquid' | 'wire' | 'switch' | 'transistor' | 'microchip' | 'circuit' | 'device' | 'cell' | 'phlegm' | 'tissue' | 'muscle' | 'organoid' | 'organism' | 'alloy' | 'tube' | 'fixtures' | 'frame' | 'hydraulics' | 'machine' | 'condensate' | 'concentrate' | 'extract' | 'spirit' | 'emanation' | 'essence';
+declare type MineralResourceType = 'H' | 'O' | 'U' | 'L' | 'K' | 'Z' | 'X' | 'G';
+declare type BoostResourceType = 'UH' | 'UO' | 'KH' | 'KO' | 'LH' | 'LO' | 'ZH' | 'ZO' | 'GH' | 'GO' | 'UH2O' | 'UHO2' | 'KH2O' | 'KHO2' | 'LH2O' | 'LHO2' | 'ZH2O' | 'ZHO2' | 'GH2O' | 'GHO2' | 'XUH2O' | 'XUHO2' | 'XKH2O' | 'XKHO2' | 'XLH2O' | 'XLHO2' | 'XZH2O' | 'XZHO2' | 'XGH2O' | 'XGHO2';
+declare type DepositResourceType = 'silicon' | 'metal' | 'biomass' | 'mist';
+declare type CommodityResourceType = 'ops' | 'utrium_bar' | 'lemergium_bar' | 'zynthium_bar' | 'keanium_bar' | 'ghodium_melt' | 'oxidant' | 'reductant' | 'purifier' | 'battery' | 'composite' | 'crystal' | 'liquid' | 'wire' | 'switch' | 'transistor' | 'microchip' | 'circuit' | 'device' | 'cell' | 'phlegm' | 'tissue' | 'muscle' | 'organoid' | 'organism' | 'alloy' | 'tube' | 'fixtures' | 'frame' | 'hydraulics' | 'machine' | 'condensate' | 'concentrate' | 'extract' | 'spirit' | 'emanation' | 'essence';
 
 declare type EffectType = 1001 | 1002;
 
@@ -579,16 +579,6 @@ interface ConstructionSite extends RoomObject, OwnedObject, ObjectId {
 
 interface CreepCommon extends RoomObject, OwnedObject, ObjectId {
     room: Room;
-    /**
-     * An alias for Creep.store.
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    carry: Store;
-    /**
-     * An alias for Creep.store.getCapacity().
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    carryCapacity: number;
     /**
      * The current amount of hit points of the creep.
      */
@@ -843,12 +833,12 @@ interface BodyPartDefinition {
 
 /**
  * Power Creeps are immortal "heroes" that are tied to your account and can be respawned in any PowerSpawn after death. You can upgrade their abilities ("powers") up to your account Global Power Level (see Game.gpl).
- * 
+ *
  * Time to live: 5,000
- * 
+ *
  * Hits: 1,000 per level
- * 
- * Capacity: 100 per level 
+ *
+ * Capacity: 100 per level
  */
 declare const PowerCreep: _ConstructorById<PowerCreep> & {
     /**
@@ -1471,9 +1461,9 @@ type Filter<T> = Partial<T> | ((aobj: T) => boolean) | keyof T;
 
 /**
  * InterShardMemory object provides an interface for communicating between shards. Your script is executed separatedly on each shard, and their Memory objects are isolated from each other. In order to pass messages and data between shards, you need to use InterShardMemory instead.
- * 
+ *
  * Every shard can have its own 100 KB of data in string format that can be accessed by all other shards. A shard can write only to its own data, other shards' data is read-only.
- * 
+ *
  * This data has nothing to do with Memory contents, it's a separate data container.
  */
 declare const InterShardMemory: InterShardMemory;
@@ -1506,7 +1496,7 @@ interface GameMap {
      * @param roomName The room name.
      * @returns The exits information or null if the room not found.
      */
-    describeExits(roomName: string): { "1"?: string; "3"?: string; "5"?: string; "7"?: string } | null;
+    describeExits(roomName: string): { '1'?: string; '3'?: string; '5'?: string; '7'?: string } | null;
     /**
      * Find the exit direction from the given room en route to another room.
      * @param fromRoom Start room name or room object.
@@ -1538,7 +1528,7 @@ interface GameMap {
     /**
      * Get a Room.Terrain object which provides fast access to static terrain data. This method works for any room in the world even if you have no access to it.
      * @param roomName The room name.
-     * @returns Returns new Room.Terrain object. 
+     * @returns Returns new Room.Terrain object.
      */
     getRoomTerrain(roomName: string): Terrain;
     /**
@@ -1768,15 +1758,15 @@ interface Memory {
 
 /**
  * A mineral deposit object. Can be harvested by creeps with a WORK body part using the extractor structure.
- * 
+ *
  * Regeneration amount:
  *  - DENSITY_LOW: 15,000
  *  - DENSITY_MODERATE: 35,000
  *  - DENSITY_HIGH: 70,000
  *  - DENSITY_ULTRA: 100,000
- * 
+ *
  * Regeneration time: 50,000 ticks
- * 
+ *
  * Density change probability:
  *  - DENSITY_LOW: 100% chance
  *  - DENSITY_MODERATE: 5% chance
@@ -2003,21 +1993,21 @@ interface RawMemory {
     setActiveSegments(ids: number[]): void;
     /**
      * Request a memory segment of another user.
-     * The segment should be marked by its owner as public using setPublicSegments. 
+     * The segment should be marked by its owner as public using setPublicSegments.
      * The segment data will become available on the next tick in foreignSegment object.
-     * You can only have access to one foreign segment at the same time. 
+     * You can only have access to one foreign segment at the same time.
      * @param {(string | null)} username The name of another user. Pass null to clear the foreign segment.
      * @param {number} [id] The ID of the requested segment from 0 to 99. If undefined, the user's default public segment is requested as set by setDefaultPublicSegment.
      */
     setActiveForeignSegment(username: string | null, id?: number): void;
     /**
-     * Set the specified segment as your default public segment. 
-     * It will be returned if no id parameter is passed to setActiveForeignSegment by another user. 
+     * Set the specified segment as your default public segment.
+     * It will be returned if no id parameter is passed to setActiveForeignSegment by another user.
      * @param {(number | null)} id The ID of the memory segment from 0 to 99. Pass null to remove your default public segment.
      */
     setDefaultPublicSegment(id: number | null): void;
     /**
-     * Set specified segments as public. Other users will be able to request access to them using setActiveForeignSegment. 
+     * Set specified segments as public. Other users will be able to request access to them using setActiveForeignSegment.
      * @param {number[]} ids An array of segment IDs. Each ID should be a number from 0 to 99. Subsequent calls of setPublicSegments override previous ones.
      */
     setPublicSegments(ids: number[]): void;
@@ -2279,7 +2269,7 @@ interface RoomPosition {
 
 type FindClosestByPathOpts<T> = FindPathOpts & {
     filter?: Filter<T>;
-    algorithm?: "astar" | "dijkstra";
+    algorithm?: 'astar' | 'dijkstra';
 };
 
 type FindClosestByRangeOpts<T> = FindPathOpts & {
@@ -2292,9 +2282,9 @@ type FindClosestByRangeOpts<T> = FindPathOpts & {
 
 /**
  * Room visuals provide a way to show various visual debug info in game rooms. You can use the RoomVisual object to draw simple shapes that are visible only to you. Every existing Room object already contains the visual property, but you also can create new RoomVisual objects for any room (even without visibility) using the constructor.
- * 
+ *
  * Room visuals are not stored in the database, their only purpose is to display something in your browser. All drawings will persist for one tick and will disappear if not updated. All RoomVisual API calls have no added CPU cost (their cost is natural and mostly related to simple JSON.serialize calls). However, there is a usage limit: you cannot post more than 500 KB of serialized data per one room (see getSize method).
- * 
+ *
  * All draw coordinates are measured in game coordinates and centered to tile centers, i.e. (10,10) will point to the center of the creep at x:10; y:10 position. Fractional coordinates are allowed.
  */
 declare const RoomVisual: {
@@ -2305,7 +2295,7 @@ declare const RoomVisual: {
     new(roomName?: string): RoomVisual;
 };
 interface RoomVisual {
-    /** 
+    /**
      * The name of the room.
      */
     roomName: string;
@@ -2391,7 +2381,7 @@ interface LineStyle {
     /**
      * Either undefined (solid line), dashed, or dotted. Default is undefined.
      */
-    lineStyle?: "dashed" | "dotted";
+    lineStyle?: 'dashed' | 'dotted';
 }
 
 interface PolyStyle {
@@ -2414,7 +2404,7 @@ interface PolyStyle {
     /**
      * Either undefined (solid line), dashed, or dotted. Default is undefined.
      */
-    lineStyle?: "dashed" | "dotted";
+    lineStyle?: 'dashed' | 'dotted';
 }
 
 interface CircleStyle extends PolyStyle {
@@ -2456,7 +2446,7 @@ interface TextStyle {
     /**
      * Text align, either center, left, or right. Default is center.
      */
-    align?: "center" | "left" | "right";
+    align?: 'center' | 'left' | 'right';
     /**
      * Opacity value, default is 1.0.
      */
@@ -2830,12 +2820,12 @@ interface Ruin extends RoomObject, ObjectId {
 
 /**
  * An energy source object. Can be harvested by creeps with a WORK body part.
- * 
+ *
  * Energy amount
  *  - 4000 in center rooms
  *  - 3000 in an owned or reserved room
  *  - 1500 in an unreserved room
- * 
+ *
  * Energy regeneration
  *  - Every 300 game ticks
  */
@@ -2860,20 +2850,23 @@ interface Source extends RoomObject, ObjectId {
 // Store
 /////////////////////////
 
+type StoringStructure = { store: Store };
+
 /**
  * An object that can contain resources in its cargo.
- * 
+ *
  * There are two types of stores in the game: general purpose stores and limited stores.
  * - General purpose stores can contain any resource within its capacity (e.g. creeps, containers, storages, terminals).
  * - Limited stores can contain only a few types of resources needed for that particular object (e.g. spawns, extensions, labs, nukers).
- * 
+ *
  * The Store prototype is the same for both types of stores, but they have different behavior depending on the resource argument in its methods.
- * 
+ *
  * You can get specific resources from the store by addressing them as object properties: console.log(creep.store[RESOURCE_ENERGY]);
  */
-type Store = {
-    [resourceType in ResourceType]?: number;
-} & {
+declare const Store: {
+    new(object: StoringStructure): Store;
+};
+interface Store {
     /**
      * Returns capacity of this store for the specified resource, or total capacity if resource is undefined.
      * @param resource The type of the resource.
@@ -2948,11 +2941,6 @@ interface StructureContainer extends Structure {
      * A Store object that contains cargo of this structure.
      */
     store: Store;
-    /**
-     * An alias for .store.getCapacity().
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    storeCapacity: number;
     /**
      * The amount of game ticks when this container will lose some hit points.
      */
@@ -3060,17 +3048,6 @@ interface SignDefinition {
 declare const StructureExtension: _ConstructorById<StructureExtension>;
 interface StructureExtension extends OwnedStructure {
     /**
-     * An alias for .store[RESOURCE_ENERGY].
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energy: number;
-    /**
-     * An alias for .store.getCapacity(RESOURCE_ENERGY).
-     * The total amount of energy the extension can contain.
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energyCapacity: number;
-    /**
      * A Store object that contains cargo of this structure.
      */
     store: Store;
@@ -3105,11 +3082,6 @@ interface StructureFactory extends OwnedStructure {
      */
     store: Store;
     /**
-     * An alias for .store.getCapacity().
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    storeCapacity: number;
-    /**
      * Produces the specified commodity. All ingredients should be available in the factory store.
      * @param resourceType One of the RESOURCE_* constants.
      */
@@ -3118,9 +3090,9 @@ interface StructureFactory extends OwnedStructure {
 
 /**
  * This NPC structure is a control center of NPC Strongholds, and also rules all invaders in the sector. It spawns NPC defenders of the stronghold, refill towers, repairs structures. While it's alive, it will spawn invaders in all rooms in the same sector. It also contains some valuable resources inside, which you can loot from its ruin if you destroy the structure.
- * 
+ *
  * An Invader Core has two lifetime stages: deploy stage and active stage. When it appears in a random room in the sector, it has ticksToDeploy property, public ramparts around it, and doesn't perform any actions. While in this stage it's invulnerable to attacks (has EFFECT_INVULNERABILITY enabled). When the ticksToDeploy timer is over, it spawns structures around it and starts spawning creeps, becomes vulnerable, and receives EFFECT_COLLAPSE_TIMER which will remove the stronghold when this timer is over.
- * 
+ *
  * An active Invader Core spawns level-0 Invader Cores in neighbor rooms. These lesser Invader Cores are spawned near the room controller and don't perform any activity except reserving/attacking the controller. One Invader Core can spawn up to 10 lesser Cores during its lifetime.
  */
 declare const StructureInvaderCore: _ConstructorById<StructureInvaderCore>;
@@ -3156,29 +3128,9 @@ interface StructureLab extends OwnedStructure {
      */
     cooldown: number;
     /**
-     * An alias for .store[RESOURCE_ENERGY].
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energy: number;
-    /**
-     * An alias for .store.getCapacity(RESOURCE_ENERGY).
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energyCapacity: number;
-    /**
-     * An alias for lab.store[lab.mineralType].
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    mineralAmount: number;
-    /**
      * The type of minerals containing in the lab. Labs can contain only one mineral type at the same time.
      */
-    mineralType: MineralResourceType | BoostResourceType;
-    /**
-     * An alias for lab.store.getCapacity(lab.mineralType || yourMineral).
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    mineralCapacity: number;
+    mineralType: MineralResourceType | BoostResourceType | undefined;
     /**
      * A Store object that contains cargo of this structure.
      */
@@ -3213,16 +3165,6 @@ interface StructureLink extends OwnedStructure {
      */
     cooldown: number;
     /**
-     * An alias for .store[RESOURCE_ENERGY].
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energy: number;
-    /**
-     * An alias for .store.getCapacity(RESOURCE_ENERGY).
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energyCapacity: number;
-    /**
      * A Store object that contains cargo of this structure.
      */
     store: Store;
@@ -3239,26 +3181,6 @@ interface StructureLink extends OwnedStructure {
  */
 declare const StructureNuker: _ConstructorById<StructureNuker>;
 interface StructureNuker extends OwnedStructure {
-    /**
-     * An alias for .store[RESOURCE_ENERGY].
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energy: number;
-    /**
-     * An alias for .store.getCapacity(RESOURCE_ENERGY).
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energyCapacity: number;
-    /**
-     * An alias for .store[RESOURCE_GHODIUM].
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    ghodium: number;
-    /**
-     * An alias for .store.getCapacity(RESOURCE_GHODIUM).
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    ghodiumCapacity: number;
     /**
      * The amount of game ticks until the next launch is possible.
      */
@@ -3307,26 +3229,6 @@ interface StructurePowerBank extends OwnedStructure {
 declare const StructurePowerSpawn: _ConstructorById<StructurePowerSpawn>;
 interface StructurePowerSpawn extends OwnedStructure {
     /**
-     * An alias for .store[RESOURCE_ENERGY].
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energy: number;
-    /**
-     * An alias for .store.getCapacity(RESOURCE_ENERGY).
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energyCapacity: number;
-    /**
-     * An alias for .store[RESOURCE_POWER].
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    power: number;
-    /**
-     * An alias for .store.getCapacity(RESOURCE_POWER).
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    powerCapacity: number;
-    /**
      * A Store object that contains cargo of this structure.
      */
     store: Store;
@@ -3345,7 +3247,7 @@ declare const StructurePortal: _ConstructorById<StructurePortal>;
 interface StructurePortal extends Structure {
     /**
      * If this is an inter-room portal, then this property contains a RoomPosition object leading to the point in the destination room.
-     * 
+     *
      * If this is an inter-shard portal, then this property contains an object with shard and room string properties. Exact coordinates are undetermined, the creep will appear at any free spot in the destination room.
      */
     destination: RoomPosition | InterShardPosition;
@@ -3400,16 +3302,6 @@ declare const StructureSpawn: _ConstructorById<StructureSpawn> & {
 };
 interface StructureSpawn extends OwnedStructure {
     /**
-     * An alias for .store[RESOURCE_ENERGY].
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energy: number;
-    /**
-     * An alias for .store.getCapacity(RESOURCE_ENERGY).
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energyCapacity: number;
-    /**
      * A shorthand to Memory.spawns[spawn.name]. You can use it for quick access the spawn’s specific memory data object.
      */
     memory: any;
@@ -3454,13 +3346,13 @@ interface StructureSpawn extends OwnedStructure {
     recycleCreep(target: Creep): OK | ERR_NOT_OWNER | ERR_INVALID_TARGET | ERR_NOT_IN_RANGE | ERR_RCL_NOT_ENOUGH;
     /**
      * Increase the remaining time to live of the target creep. The target should be at adjacent square. The spawn should not be busy with the spawning process. Each execution increases the creep's timer by amount of ticks according to this formula:
-     * 
+     *
      * floor(600/body_size)
-     * 
+     *
      * Energy required for each execution is determined using this formula:
-     * 
+     *
      * ceil(creep_cost/2.5/body_size)
-     * 
+     *
      * Renewing a creep removes all of its boosts.
      * @param target The target creep object.
      */
@@ -3533,16 +3425,11 @@ interface StructureStorage extends OwnedStructure {
      * A Store object that contains cargo of this structure.
      */
     store: Store;
-    /**
-     * An alias for .store.getCapacity().
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    storeCapacity: number;
 }
 
 /**
  * Sends any resources to a Terminal in another room. The destination Terminal can belong to any player. Each transaction requires additional energy (regardless of the transfer resource type) that can be calculated using Game.market.calcTransactionCost method. For example, sending 1000 mineral units from W0N0 to W10N5 will consume 742 energy units. You can track your incoming and outgoing transactions using the Game.market object. Only one Terminal per room is allowed that can be addressed by Room.terminal property.
- * 
+ *
  * Terminals are used in the Market system.
  */
 declare const StructureTerminal: _ConstructorById<StructureTerminal>;
@@ -3555,11 +3442,6 @@ interface StructureTerminal extends OwnedStructure {
      * A Store object that contains cargo of this structure.
      */
     store: Store;
-    /**
-     * An alias for .store.getCapacity().
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    storeCapacity: number;
     /**
      * Sends resource to a Terminal in another room with the specified name.
      * @param resourceType One of the RESOURCE_* constants.
@@ -3575,16 +3457,6 @@ interface StructureTerminal extends OwnedStructure {
  */
 declare const StructureTower: _ConstructorById<StructureTower>;
 interface StructureTower extends OwnedStructure {
-    /**
-     * An alias for .store[RESOURCE_ENERGY].
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energy: number;
-    /**
-     * An alias for .store.getCapacity(RESOURCE_ENERGY).
-     * @deprecated This property is deprecated and will be removed soon.
-     */
-    energyCapacity: number;
     /**
      * A Store object that contains cargo of this structure.
      */
